@@ -9,6 +9,7 @@ namespace LoupGarouTest
         [TestMethod]
         public void TestMethod1()
         {
+            //Assert.IsNotNull(extractedRequirements[strRequirementID]);
         }
     }
 }

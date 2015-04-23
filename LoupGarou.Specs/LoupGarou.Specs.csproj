@@ -53,23 +53,38 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\SpecFlowFeature1.feature.cs">
+    <Compile Include="Sources\DeroulementDuJeuSteps.cs" />
+    <Compile Include="Features\DeroulementDuJeu.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>DeroulementDuJeu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\RoleDeLaSorciere.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleDeLaSorciere.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\SpecFlowFeature1Steps.cs" />
+    <Compile Include="Sources\RoleDeLaSorciereSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\SpecFlowFeature1.feature">
+    <None Include="Features\DeroulementDuJeu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>DeroulementDuJeu.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RoleDeLaSorciere.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleDeLaSorciere.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LoupGarou\LoupGarou.csproj">
+      <Project>{08419efd-835a-4e35-9ef0-d0e55bf24223}</Project>
+      <Name>LoupGarou</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
