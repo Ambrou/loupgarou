@@ -11,30 +11,29 @@ Scénario: Présentation de la sorcière
 	Et Johanna est la sorcière
 
 @sorcière
-Scénario: Début du tour de la sorcière
-	Soit Johanna jouant la sorcière
-	Lorsque les loups ont mangé leur victime
-	Alors le maître du jeu appelle la sorcière
-	Et son tour commence
+Scénario: Début du tour de la Sorcière
+	Soit la Sorcière est en jeu
+	Quand on passe au tour de la Sorcière
+	Alors le maître du jeu appelle la Sorcière
+	Et le tour de jeu est celui de la Sorcière
 
 @sorcière
 Scénario: Fin du tour de la sorcière
-	Soit Johanna jouant la sorcière
+	Soit Johanna jouant le personnage de Sorcière
 	Et son tour est en cours
 	Lorsque qu'elle valide l'utilisation de ses potions
 	Alors le maître du jeu rendort la sorcière
-	Et son tour se termine
 	
 @sorcière
 Scénario: tour de la sorcière
-	Soit Johanna jouant la sorcière
+	Soit Johanna jouant le personnage de Sorcière
 	Et la victime des loups est le joueur Ambroise
 	Lorsque son tour est en cours
 	Alors elle découvre que la victime est Ambroise
 
 @sorcière
 Scénario: utilisation de la potion de vie
-	Soit Johanna jouant la sorcière
+	Soit Johanna jouant le personnage de Sorcière
 	Et la victime des loups est le joueur Ambroise
 	Lorsque qu'elle utilise sa potion de vie
 	Alors Ambroise n'est pas mort au prochain levé du soleil
@@ -42,7 +41,7 @@ Scénario: utilisation de la potion de vie
 
 @sorcière
 Scénario: utilisation de la potion de mort
-	Soit Johanna jouant la sorcière
+	Soit Johanna jouant le personnage de Sorcière
 	Et Ambroise un joueur encore en vie
 	Lorsque qu'elle utilise sa potion de mort sur Ambroise
 	Alors Ambroise est mort au prochain levé du soleil

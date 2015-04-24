@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LoupGarou.State
 {
-    interface IState
+    public interface IRolePlay
     {
+        //void nextRole(WereWolfGame wereWolfGame);
+        //void wake();
+        //void sleep();
     }
 }
