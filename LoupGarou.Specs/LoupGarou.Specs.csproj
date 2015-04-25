@@ -53,6 +53,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\RoleDeLaVoyante.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleDeLaVoyante.feature</DependentUpon>
+    </Compile>
     <Compile Include="Sources\DeroulementDuJeuSteps.cs" />
     <Compile Include="Features\DeroulementDuJeu.feature.cs">
       <AutoGen>True</AutoGen>
@@ -66,6 +71,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\RoleDeLaSorciereSteps.cs" />
+    <Compile Include="Sources\RoleDeLaVoyanteSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -76,6 +82,10 @@
     <None Include="Features\RoleDeLaSorciere.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RoleDeLaSorciere.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RoleDeLaVoyante.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleDeLaVoyante.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

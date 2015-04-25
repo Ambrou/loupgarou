@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,22 +42,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Characters\Cupid.cs" />
-    <Compile Include="Characters\ICharacter.cs" />
-    <Compile Include="Characters\Lover.cs" />
-    <Compile Include="Characters\Thief.cs" />
-    <Compile Include="Characters\Villager.cs" />
-    <Compile Include="Characters\WereWolf.cs" />
+    <Compile Include="WereWolfGameRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WereWolfGameRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Cupidon.cs" />
+    <Compile Include="Roles\Role.cs" />
+    <Compile Include="Roles\Amoureux.cs" />
+    <Compile Include="Roles\RoleFactory.cs" />
+    <Compile Include="Roles\Voleur.cs" />
+    <Compile Include="Roles\Villageois.cs" />
+    <Compile Include="Roles\LoupGarou.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\Voyante.cs" />
     <Compile Include="State\IRolePlay.cs" />
     <Compile Include="State\WereWolf.cs" />
     <Compile Include="State\Witch.cs" />
     <Compile Include="WereWolfGame.cs" />
-    <Compile Include="Characters\Witch.cs" />
+    <Compile Include="Roles\Sorciere.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WereWolfGameRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WereWolfGameRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
