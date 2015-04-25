@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoupGarou.State
+namespace JeuDuLoupGarou.State
 {
     public interface IRolePlay
     {

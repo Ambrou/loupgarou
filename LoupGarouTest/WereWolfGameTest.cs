@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LoupGarou;
+using JeuDuLoupGarou;
 
 namespace LoupGarouTest
 {

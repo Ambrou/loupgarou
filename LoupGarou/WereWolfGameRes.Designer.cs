@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoupGarou {
+namespace JeuDuLoupGarou {
     using System;
     
     
@@ -61,11 +61,29 @@ namespace LoupGarou {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loup Garou.
+        /// </summary>
+        internal static string LoupGarou {
+            get {
+                return ResourceManager.GetString("LoupGarou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorcière.
         /// </summary>
         internal static string Sorciere {
             get {
                 return ResourceManager.GetString("Sorciere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Villageois.
+        /// </summary>
+        internal static string Villageois {
+            get {
+                return ResourceManager.GetString("Villageois", resourceCulture);
             }
         }
         

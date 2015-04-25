@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoupGarou.Roles
+namespace JeuDuLoupGarou.Roles
 {
     public abstract class Role
     {
