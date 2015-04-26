@@ -8,25 +8,20 @@ namespace LoupGarou.Specs.Sources
     [Binding]
     public class RoleDuVillageoisSteps
     {
-        WereWolfGame wereWolfGame = new WereWolfGame();
-
-        [Given(@"Maria est un villageois")]
-        public void SoitMariaEstUnVillageois()
-        {
-            wereWolfGame.attribueLeRoleDeVillageoisA("Maria");
-        }
 
         [When(@"Maria vote contre Ambroise")]
         public void QuandMariaVoteContreAmbroise()
         {
-            wereWolfGame.villageois.voteContre("Ambroise");
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.villageois["Maria"].voteContre("Ambroise");
         }
 
-        [Then(@"Ambroise est le prochain brulé")]
-        public void AlorsAmbroiseEstLeProchainBrule()
+        [When(@"Maria vote contre Ambroise et Ambroise vote contre Maria")]
+        public void QuandMariaVoteContreAmbroiseEtAmbroiseVoteContreMaria()
         {
-            Assert.AreEqual("Ambroise", wereWolfGame.NomDuProchainMort);
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.villageois["Maria"].voteContre("Ambroise");
+            wereWolfGame.villageois["Ambroise"].voteContre("Maria");
         }
-
     }
 }

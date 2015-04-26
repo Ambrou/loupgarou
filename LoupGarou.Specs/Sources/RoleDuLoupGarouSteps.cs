@@ -8,30 +8,58 @@ namespace LoupGarou.Specs
     [Binding]
     public class RoleDuLoupGarouSteps
     {
-        WereWolfGame wereWolfGame = new WereWolfGame();
-
-        [Given(@"Blondin un loup")]
-        public void SoitBlondinUnLoup()
+       
+        [Given(@"(.*) un loup")]
+        public void SoitBlondinUnLoup(string strNomDujoueur)
         {
-            wereWolfGame.attribueLeRoleDeLoupA("Blondin");
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.attribueLeRoleDeLoupA(strNomDujoueur);
         }
 
-        [Given(@"Ambroise un villageois")]
-        public void SoitAmbroiseUnVillageois()
+        [Given(@"(.*) est un villageois")]
+        public void SoitAmbroiseUnVillageois(string strNomDujoueur)
         {
-            wereWolfGame.attribueLeRoleDeVillageoisA("Ambroise");
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.attribueLeRoleDeVillageoisA(strNomDujoueur);
         }
 
-        [When(@"le loup mange Ambroise")]
-        public void QuandLeLoupMangeAmbroise()
+        [When(@"Blondin mange Ambroise")]
+        public void QuandBlondinMangeAmbroise()
         {
-            wereWolfGame.loupGarou.mange("Ambroise");
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
         }
 
         [Then(@"Ambroise est le prochain mort")]
         public void AlorsAmbroiseEstLeProchainMort()
         {
-            Assert.AreEqual("Ambroise", wereWolfGame.NomDuProchainMort);
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            Assert.AreEqual("Ambroise", wereWolfGame.estLeProchainMort());
         }
+
+        [Then(@"il n'y a pas de mort")]
+        public void AlorsIlNYAPasDeMort()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            Assert.AreEqual("", wereWolfGame.estLeProchainMort());
+        }
+
+        [When(@"Blondin mange Ambroise et Johanna mange Maria")]
+        public void QuandBlondinMangeAmbroiseEtJohannaMangeMaria()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
+            wereWolfGame.loupGarou["Johanna"].mange("Maria");
+        }
+
+        [When(@"Blondin mange Ambroise et Johanna mange Maria et Blondina mange Ambroise")]
+        public void QuandBlondinMangeAmbroiseEtJohannaMangeMariaEtBlondinaMangeAmbroise()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
+            wereWolfGame.loupGarou["Johanna"].mange("Maria");
+            wereWolfGame.loupGarou["Blondina"].mange("Ambroise");
+        }
+
     }
 }

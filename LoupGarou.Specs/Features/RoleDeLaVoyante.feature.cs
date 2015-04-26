@@ -73,7 +73,9 @@ namespace LoupGarou.Specs.Features
         {
 #line 6
 #line 8
- testRunner.Given("la voyante joue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+ testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 9
+ testRunner.And("la voyante joue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
         }
         
@@ -85,17 +87,17 @@ namespace LoupGarou.Specs.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("la voyante agit / joue", new string[] {
                         "voyante"});
-#line 18
+#line 19
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 19
- testRunner.Given("Maria est la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 20
- testRunner.And("Johanna est la sorcière", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.Given("Maria est la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 21
- testRunner.When("la voyante utilise son pouvoir sur Johanna", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("Johanna est la sorcière", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 22
+ testRunner.When("la voyante utilise son pouvoir sur Johanna", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 23
  testRunner.Then("Maria découvre que Johanna est la sorcière", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();

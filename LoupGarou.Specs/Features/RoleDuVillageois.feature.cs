@@ -69,6 +69,14 @@ namespace LoupGarou.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line 7
+ testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line hidden
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("les villageois votent")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du villageois")]
@@ -77,14 +85,42 @@ namespace LoupGarou.Specs.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les villageois votent", new string[] {
                         "villageois"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 9
- testRunner.When("Maria vote contre Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
 #line 10
- testRunner.Then("Ambroise est le prochain brulé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 11
+ testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 12
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 13
+ testRunner.When("Maria vote contre Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 14
+ testRunner.Then("Ambroise est le prochain mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("les villageois sont indécis")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du villageois")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("villageois")]
+        public virtual void LesVillageoisSontIndecis()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les villageois sont indécis", new string[] {
+                        "villageois"});
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 18
+ testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 19
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 20
+ testRunner.When("Maria vote contre Ambroise et Ambroise vote contre Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 21
+ testRunner.Then("il n\'y a pas de mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }
