@@ -63,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoleDuLoupGarou.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\RoleDuVillageois.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleDuVillageois.feature</DependentUpon>
+    </Compile>
     <Compile Include="Sources\RoleDuLoupGarouSteps.cs" />
     <Compile Include="Sources\DeroulementDuJeuSteps.cs" />
     <Compile Include="Features\DeroulementDuJeu.feature.cs">
@@ -78,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\RoleDeLaSorciereSteps.cs" />
     <Compile Include="Sources\RoleDeLaVoyanteSteps.cs" />
+    <Compile Include="Sources\RoleDuVillageoisSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,6 +102,10 @@
     <None Include="Features\RoleDuLoupGarou.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RoleDuLoupGarou.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RoleDuVillageois.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleDuVillageois.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
