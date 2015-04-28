@@ -94,8 +94,10 @@ this.FeatureBackground();
 #line 12
  testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 13
- testRunner.When("Maria vote contre Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("le tour des villageois commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 14
+ testRunner.When("Maria vote contre Ambroise et Ambroise vote contre Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 15
  testRunner.Then("Ambroise est le prochain mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
@@ -109,18 +111,85 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les villageois sont indécis", new string[] {
                         "villageois"});
-#line 17
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 18
- testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 19
- testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 20
- testRunner.When("Maria vote contre Ambroise et Ambroise vote contre Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 21
+ testRunner.And("le tour des villageois commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 22
+ testRunner.When("Maria vote contre Ambroise et Ambroise vote contre Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 23
  testRunner.Then("il n\'y a pas de mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("les villageois n\'ont pas tous voté")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du villageois")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("villageois")]
+        public virtual void LesVillageoisNOntPasTousVote()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les villageois n\'ont pas tous voté", new string[] {
+                        "villageois"});
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 27
+ testRunner.Given("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 28
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 29
+ testRunner.And("le tour des villageois commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 30
+ testRunner.When("Maria vote contre Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 31
+ testRunner.Then("il n\'y a pas de mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("liste des joueurs villageois devant voter le jour")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du villageois")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("villageois")]
+        public virtual void ListeDesJoueursVillageoisDevantVoterLeJour()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("liste des joueurs villageois devant voter le jour", new string[] {
+                        "villageois"});
+#line 34
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 35
+ testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 36
+ testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 37
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 38
+ testRunner.And("Maria est la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 39
+ testRunner.When("le tour des villageois commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "joueur"});
+            table1.AddRow(new string[] {
+                        "Blondin"});
+            table1.AddRow(new string[] {
+                        "Johanna"});
+            table1.AddRow(new string[] {
+                        "Ambroise"});
+            table1.AddRow(new string[] {
+                        "Maria"});
+#line 40
+ testRunner.Then("les joueurs qui peuvent voter sont", ((string)(null)), table1, "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }

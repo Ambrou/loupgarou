@@ -9,19 +9,36 @@ namespace LoupGarou.Specs.Sources
     public class RoleDuVillageoisSteps
     {
 
-        [When(@"Maria vote contre Ambroise")]
-        public void QuandMariaVoteContreAmbroise()
+        [When(@"Maria vote contre Ambroise et Ambroise vote contre Ambroise")]
+        public void QuandMariaVoteContreAmbroiseEtAmbroiseVoteContreAmbroise()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            wereWolfGame.villageois["Maria"].voteContre("Ambroise");
+            wereWolfGame.voteContre("Maria", "Ambroise");
+            wereWolfGame.voteContre("Ambroise", "Ambroise");
+
         }
 
         [When(@"Maria vote contre Ambroise et Ambroise vote contre Maria")]
         public void QuandMariaVoteContreAmbroiseEtAmbroiseVoteContreMaria()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            wereWolfGame.villageois["Maria"].voteContre("Ambroise");
-            wereWolfGame.villageois["Ambroise"].voteContre("Maria");
+            wereWolfGame.voteContre("Maria", "Ambroise");
+            wereWolfGame.voteContre("Ambroise", "Maria");
+        }
+
+        [When(@"Maria vote contre Ambroise")]
+        public void QuandMariaVoteContreAmbroise()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.voteContre("Maria", "Ambroise");
+        }
+
+        [When(@"le tour des villageois commence")]
+        [Given(@"le tour des villageois commence")]
+        public void QuandLeTourDesVillageoisCommence()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.commencerLeDebat();
         }
     }
 }

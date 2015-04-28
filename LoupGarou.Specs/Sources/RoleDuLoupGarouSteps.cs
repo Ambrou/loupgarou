@@ -27,7 +27,7 @@ namespace LoupGarou.Specs
         public void QuandBlondinMangeAmbroise()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
+            wereWolfGame.voteContre("Blondin", "Ambroise");
         }
 
         [Then(@"Ambroise est le prochain mort")]
@@ -48,18 +48,47 @@ namespace LoupGarou.Specs
         public void QuandBlondinMangeAmbroiseEtJohannaMangeMaria()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
-            wereWolfGame.loupGarou["Johanna"].mange("Maria");
+            wereWolfGame.voteContre("Blondin", "Ambroise");
+            wereWolfGame.voteContre("Johanna", "Maria");
         }
 
         [When(@"Blondin mange Ambroise et Johanna mange Maria et Blondina mange Ambroise")]
         public void QuandBlondinMangeAmbroiseEtJohannaMangeMariaEtBlondinaMangeAmbroise()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            wereWolfGame.loupGarou["Blondin"].mange("Ambroise");
-            wereWolfGame.loupGarou["Johanna"].mange("Maria");
-            wereWolfGame.loupGarou["Blondina"].mange("Ambroise");
+            wereWolfGame.voteContre("Blondin", "Ambroise");
+            wereWolfGame.voteContre("Johanna", "Maria");
+            wereWolfGame.voteContre("Blondina", "Ambroise");
         }
+
+        [When(@"le tour des loups commence")]
+        [Given(@"le tour des loups commence")]
+        public void QuandLeTourDesLoupsCommence()
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            wereWolfGame.activerLesLoups();
+        }
+
+        [Then(@"les joueurs qui peuvent voter sont")]
+        public void AlorsLesJoueursQuiPeuventVoterSont(Table table)
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(wereWolfGame.villageoisAyantVote.ContainsKey(row["joueur"]));
+            }
+        }
+
+        [Then(@"les joueurs qui ne peuvent pas voter sont")]
+        public void AlorsLesJoueursQuiNePeuventPasVoterSont(Table table)
+        {
+            var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsFalse(wereWolfGame.villageoisAyantVote.ContainsKey(row["joueur"]));
+            }
+        }
+
 
     }
 }

@@ -3,20 +3,30 @@
 	En tant que sorcière
 	Je veux utiliser mes potions pour empoisonner ou sauver une personne qui vient d'être dévorer
 
+Contexte: 
+	Soit le jeu du loup garou
+
+@sorcière
+Scénario: Découverte de la victime des loups
+	Soit Johanna est la sorcière
+	Quand les loups ont choisit Ambroise
+	Alors elle découvre que la victime est Ambroise
+
+
+
+
+
+
+
+
 @sorcière
 Scénario: Présentation de la sorcière
-	Soit la joueuse Johanna
+	Soit Johanna est la sorcière
 	Lorsque le personnage de la sorcière est attribué à Johanna
 	Alors Johanna est une villageoise
 	Et Johanna est la sorcière
 
-@sorcière
-Scénario: Début du tour de la Sorcière
-	Soit la Sorcière est en jeu
-	Quand on passe au tour de la Sorcière
-	Alors le maître du jeu appelle la Sorcière
-	Et le tour de jeu est celui de la Sorcière
-
+	
 @sorcière
 Scénario: Fin du tour de la sorcière
 	Soit Johanna jouant le personnage de Sorcière

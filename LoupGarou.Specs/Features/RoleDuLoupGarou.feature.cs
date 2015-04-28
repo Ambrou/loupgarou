@@ -94,8 +94,10 @@ this.FeatureBackground();
 #line 12
  testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 13
- testRunner.When("Blondin mange Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("le tour des loups commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 14
+ testRunner.When("Blondin mange Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 15
  testRunner.Then("Ambroise est le prochain mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
@@ -109,21 +111,23 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les loups garous sont indécis", new string[] {
                         "loup_garou"});
-#line 17
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 18
- testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 19
- testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 20
- testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 21
- testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 22
- testRunner.When("Blondin mange Ambroise et Johanna mange Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 23
+ testRunner.And("le tour des loups commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 24
+ testRunner.When("Blondin mange Ambroise et Johanna mange Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 25
  testRunner.Then("il n\'y a pas de mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
@@ -137,24 +141,94 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les loups garous sont presque indécis", new string[] {
                         "loup_garou"});
-#line 26
+#line 28
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 27
- testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 28
- testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 29
- testRunner.And("Blondina un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 30
- testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 31
- testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("Blondina un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 32
- testRunner.When("Blondin mange Ambroise et Johanna mange Maria et Blondina mange Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 33
+ testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 34
+ testRunner.And("le tour des loups commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 35
+ testRunner.When("Blondin mange Ambroise et Johanna mange Maria et Blondina mange Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 36
  testRunner.Then("Ambroise est le prochain mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("les loups garous n\'ont pas tous voté")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du loup garou")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("loup_garou")]
+        public virtual void LesLoupsGarousNOntPasTousVote()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("les loups garous n\'ont pas tous voté", new string[] {
+                        "loup_garou"});
+#line 39
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 40
+ testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 41
+ testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 42
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 43
+ testRunner.And("le tour des loups commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 44
+ testRunner.When("Blondin mange Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 45
+ testRunner.Then("il n\'y a pas de mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("liste des joueurs loups devant voter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Role du loup garou")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("loup_garou")]
+        public virtual void ListeDesJoueursLoupsDevantVoter()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("liste des joueurs loups devant voter", new string[] {
+                        "loup_garou"});
+#line 48
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 49
+ testRunner.Given("Blondin un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 50
+ testRunner.And("Johanna un loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 51
+ testRunner.And("Ambroise est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 52
+ testRunner.When("le tour des loups commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "joueur"});
+            table1.AddRow(new string[] {
+                        "Blondin"});
+            table1.AddRow(new string[] {
+                        "Johanna"});
+#line 53
+ testRunner.Then("les joueurs qui peuvent voter sont", ((string)(null)), table1, "Alors ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "joueur"});
+            table2.AddRow(new string[] {
+                        "Ambroise"});
+#line 57
+ testRunner.And("les joueurs qui ne peuvent pas voter sont", ((string)(null)), table2, "Et ");
 #line hidden
             this.ScenarioCleanup();
         }

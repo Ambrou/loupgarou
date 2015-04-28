@@ -58,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoleDeLaVoyante.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\RoleDuChasseur.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoleDuChasseur.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\RoleDuLoupGarou.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +103,10 @@
     <None Include="Features\RoleDeLaVoyante.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RoleDeLaVoyante.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RoleDuChasseur.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RoleDuChasseur.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\RoleDuLoupGarou.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
