@@ -73,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoleDuVillageois.feature</DependentUpon>
     </Compile>
+    <Compile Include="Sources\RoleDuChasseurSteps.cs" />
     <Compile Include="Sources\RoleDuLoupGarouSteps.cs" />
     <Compile Include="Sources\DeroulementDuJeuSteps.cs" />
     <Compile Include="Features\DeroulementDuJeu.feature.cs">
@@ -119,9 +120,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoupGarou\LoupGarou.csproj">
+    <ProjectReference Include="..\LoupGarou\JeuDuLoupGarou.csproj">
       <Project>{08419efd-835a-4e35-9ef0-d0e55bf24223}</Project>
-      <Name>LoupGarou</Name>
+      <Name>JeuDuLoupGarou</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

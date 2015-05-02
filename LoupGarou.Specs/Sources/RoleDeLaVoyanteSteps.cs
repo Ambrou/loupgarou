@@ -34,7 +34,7 @@ namespace LoupGarou.Specs.Sources
         public void QuandLaVoyanteUtiliseSonPouvoirSurJohanna()
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            roleDecouvert = wereWolfGame.voyante.devoileLeRoleDe("Johanna");
+            roleDecouvert = wereWolfGame.devoileLeRoleDe("Johanna");
         }
 
         [Then(@"Maria découvre que Johanna est la sorcière")]

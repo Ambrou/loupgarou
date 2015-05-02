@@ -2,6 +2,8 @@
 using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using JeuDuLoupGarou;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LoupGarou.Specs
 {
@@ -30,11 +32,11 @@ namespace LoupGarou.Specs
             wereWolfGame.voteContre("Blondin", "Ambroise");
         }
 
-        [Then(@"Ambroise est le prochain mort")]
-        public void AlorsAmbroiseEstLeProchainMort()
+        [Then(@"(.*) est le prochain mort")]
+        public void AlorsAmbroiseEstLeProchainMort(string strNomDuJoueur)
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
-            Assert.AreEqual("Ambroise", wereWolfGame.estLeProchainMort());
+            Assert.AreEqual(strNomDuJoueur, wereWolfGame.estLeProchainMort());
         }
 
         [Then(@"il n'y a pas de mort")]
@@ -73,9 +75,11 @@ namespace LoupGarou.Specs
         public void AlorsLesJoueursQuiPeuventVoterSont(Table table)
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+
+            Assert.AreEqual(table.Rows.Count, wereWolfGame.villageoisAyantVote.Count);
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(wereWolfGame.villageoisAyantVote.ContainsKey(row["joueur"]));
+                Assert.AreEqual(1, wereWolfGame.villageoisAyantVote.Count(villageois => villageois.nomDuJoueur == row["joueur"]));
             }
         }
 
@@ -83,9 +87,10 @@ namespace LoupGarou.Specs
         public void AlorsLesJoueursQuiNePeuventPasVoterSont(Table table)
         {
             var wereWolfGame = ScenarioContext.Current.Get<WereWolfGame>();
+
             foreach (var row in table.Rows)
             {
-                Assert.IsFalse(wereWolfGame.villageoisAyantVote.ContainsKey(row["joueur"]));
+                Assert.AreEqual(0, wereWolfGame.villageoisAyantVote.Count(villageois => villageois.nomDuJoueur == row["joueur"]));
             }
         }
 

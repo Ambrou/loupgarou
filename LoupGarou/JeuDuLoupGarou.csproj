@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\VillageoisAyantVote.cs" />
+    <Compile Include="Roles\Chasseur.cs" />
     <Compile Include="WereWolfGameRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +72,7 @@
     <EmbeddedResource Include="WereWolfGameRes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WereWolfGameRes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

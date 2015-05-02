@@ -61,6 +61,15 @@ namespace JeuDuLoupGarou {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chasseur.
+        /// </summary>
+        internal static string Chasseur {
+            get {
+                return ResourceManager.GetString("Chasseur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loup Garou.
         /// </summary>
         internal static string LoupGarou {

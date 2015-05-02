@@ -9,7 +9,8 @@ Contexte:
 @chasseur
 Scénario: le chasseur est tué
 	Soit Ambroise est le chasseur
+	Et il vient d'être tué
 	Et Maria est un villageois
-	Et Ambroise vient de mourrir
+	Et Johanna est un villageois
 	Lorsque Ambroise choisit de tirer sur Maria
 	Alors Maria est le prochain mort

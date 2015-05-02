@@ -92,12 +92,14 @@ this.FeatureBackground();
 #line 11
  testRunner.Given("Ambroise est le chasseur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 12
- testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("il vient d\'être tué", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 13
- testRunner.And("Ambroise vient de mourrir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.And("Maria est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 14
- testRunner.When("Ambroise choisit de tirer sur Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("Johanna est un villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 15
+ testRunner.When("Ambroise choisit de tirer sur Maria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 16
  testRunner.Then("Maria est le prochain mort", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
