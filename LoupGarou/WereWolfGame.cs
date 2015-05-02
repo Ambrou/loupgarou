@@ -10,35 +10,36 @@ namespace JeuDuLoupGarou
     {
         public Dictionary<String, String> attributionDesRolesParJoueur = new Dictionary<String, String>();
         public Dictionary<String, int> resultatDElection = new Dictionary<String, int>();
-         public List<VillageoisAyantVote> villageoisAyantVote;
+        public List<VillageoisAyantVote> villageoisAyantVote;
         
         public void attribueLeRoleDeVoyanteA(string NomDuJoueur)
         {
-            attributionDesRolesParJoueur.Add(NomDuJoueur, JeuDuLoupGarou.WereWolfGameRes.Voyante);
-            resultatDElection.Add(NomDuJoueur, 0);
+            attribueLeRoleDeA(JeuDuLoupGarou.WereWolfGameRes.Voyante, NomDuJoueur);
         }
 
         public void attribueLeRoleDeSorciereA(string NomDuJoueur)
         {
-            attributionDesRolesParJoueur.Add(NomDuJoueur, JeuDuLoupGarou.WereWolfGameRes.Sorciere);
-            resultatDElection.Add(NomDuJoueur, 0);
+            attribueLeRoleDeA(JeuDuLoupGarou.WereWolfGameRes.Sorciere, NomDuJoueur);
         }
 
         public void attribueLeRoleDeLoupA(string NomDuJoueur)
         {
-            attributionDesRolesParJoueur.Add(NomDuJoueur, JeuDuLoupGarou.WereWolfGameRes.LoupGarou); ;
-            resultatDElection.Add(NomDuJoueur, 0);
+            attribueLeRoleDeA(JeuDuLoupGarou.WereWolfGameRes.LoupGarou, NomDuJoueur);
         }
 
         public void attribueLeRoleDeVillageoisA(string NomDuJoueur)
         {
-            attributionDesRolesParJoueur.Add(NomDuJoueur, JeuDuLoupGarou.WereWolfGameRes.Villageois); ;
-            resultatDElection.Add(NomDuJoueur, 0);
+            attribueLeRoleDeA(JeuDuLoupGarou.WereWolfGameRes.Villageois, NomDuJoueur);
         }
 
         public void attribueLeRoleDeChasseurA(string NomDuJoueur)
         {
-            attributionDesRolesParJoueur.Add(NomDuJoueur, JeuDuLoupGarou.WereWolfGameRes.Chasseur); ;
+            attribueLeRoleDeA(JeuDuLoupGarou.WereWolfGameRes.Chasseur, NomDuJoueur);
+        }
+
+        private void attribueLeRoleDeA(string RoleDuJoueur, string NomDuJoueur)
+        {
+            attributionDesRolesParJoueur.Add(NomDuJoueur, RoleDuJoueur);
             resultatDElection.Add(NomDuJoueur, 0);
         }
 
@@ -67,15 +68,13 @@ namespace JeuDuLoupGarou
                     }
                 }
             }
-
             return NomDuProchainMort;
         }
 
         public void voteContre(string NomDuVillageois, string strNomDeLElu)
         {
             resultatDElection[strNomDeLElu] += 1;
-            var liste = villageoisAyantVote.Where(villageois => villageois.nomDuJoueur == NomDuVillageois).Select(villageois => { villageois.ayantVote = true; return villageois; }).ToList();
-
+            villageoisAyantVote.Where(villageois => villageois.nomDuJoueur == NomDuVillageois).Select(villageois => { villageois.ayantVote = true; return villageois; }).ToList();
         }
 
         public void commencerLeDebat()
@@ -87,16 +86,18 @@ namespace JeuDuLoupGarou
 
         public void activerLesLoups()
         {
-            var liste = from joueur in attributionDesRolesParJoueur
-                        where joueur.Value == JeuDuLoupGarou.WereWolfGameRes.LoupGarou
-                        select new VillageoisAyantVote (){ nomDuJoueur = joueur.Key, ayantVote = false };
-            villageoisAyantVote = liste.ToList();
+            activer(JeuDuLoupGarou.WereWolfGameRes.LoupGarou);
         }
 
         public void commencerLaChasse()
         {
+            activer(JeuDuLoupGarou.WereWolfGameRes.Chasseur);
+        }
+
+        private void activer(string nomDuRole)
+        {
             var liste = from joueur in attributionDesRolesParJoueur
-                        where joueur.Value == JeuDuLoupGarou.WereWolfGameRes.Chasseur
+                        where joueur.Value == nomDuRole
                         select new VillageoisAyantVote() { nomDuJoueur = joueur.Key, ayantVote = false };
             villageoisAyantVote = liste.ToList();
         }

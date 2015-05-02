@@ -69,106 +69,32 @@ namespace LoupGarou.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Déroulement du premier tour de jeu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Déroulement du jeu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("sorcière")]
-        public virtual void DeroulementDuPremierTourDeJeu()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déroulement du premier tour de jeu", new string[] {
-                        "sorcière"});
+#line 6
 #line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
-testRunner.Given("tous les personnages sont présents dans le jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 9
-testRunner.When("la partie se lance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+ testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ordre"});
-            table1.AddRow(new string[] {
-                        "Voleur"});
-            table1.AddRow(new string[] {
-                        "Cupidon"});
-            table1.AddRow(new string[] {
-                        "Voyante"});
-            table1.AddRow(new string[] {
-                        "Amoureux"});
-            table1.AddRow(new string[] {
-                        "Loup Garou"});
-            table1.AddRow(new string[] {
-                        "Sorcière"});
-            table1.AddRow(new string[] {
-                        "Villageois"});
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Le jour se lève")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Déroulement du jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("maitreDuJeu")]
+        public virtual void LeJourSeLeve()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le jour se lève", new string[] {
+                        "maitreDuJeu"});
 #line 10
-testRunner.Then("le premier tour de jeu se déroule dans cet ordre:", ((string)(null)), table1, "Alors ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Déroulement des autres tours de jeu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Déroulement du jeu")]
-        public virtual void DeroulementDesAutresToursDeJeu()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déroulement des autres tours de jeu", ((string[])(null)));
-#line 20
 this.ScenarioSetup(scenarioInfo);
-#line 21
-testRunner.Given("tous les personnages sont présents dans le jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 22
-testRunner.When("le premier tour de jeu est fini", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ordre"});
-            table2.AddRow(new string[] {
-                        "Voyante"});
-            table2.AddRow(new string[] {
-                        "Loup Garou"});
-            table2.AddRow(new string[] {
-                        "Sorcière"});
-            table2.AddRow(new string[] {
-                        "Villageois"});
-#line 23
-testRunner.Then("les autres tours de jeu se déroule dans cet ordre:", ((string)(null)), table2, "Alors ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Déroulement d\'un tour de jeu avec personnage mort ou absent du jeu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Déroulement du jeu")]
-        public virtual void DeroulementDUnTourDeJeuAvecPersonnageMortOuAbsentDuJeu()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déroulement d\'un tour de jeu avec personnage mort ou absent du jeu", ((string[])(null)));
-#line 30
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Personnage"});
-            table3.AddRow(new string[] {
-                        "Voyante"});
-            table3.AddRow(new string[] {
-                        "Loup Garou"});
-            table3.AddRow(new string[] {
-                        "Sorcière"});
-            table3.AddRow(new string[] {
-                        "Villageois"});
-#line 31
-testRunner.Given("le tour de jeu est le suivant:", ((string)(null)), table3, "Soit ");
-#line 37
-testRunner.When("la Voyante meurt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ordre"});
-            table4.AddRow(new string[] {
-                        "Loup Garou"});
-            table4.AddRow(new string[] {
-                        "Sorcière"});
-            table4.AddRow(new string[] {
-                        "Villageois"});
-#line 38
-testRunner.Then("les autres tours de jeu se déroule dans cet ordre:", ((string)(null)), table4, "Alors ");
+#line 6
+this.FeatureBackground();
+#line 11
+    testRunner.Given("le prochain mort Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 12
+ testRunner.When("le jour se léve", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 13
+ testRunner.Then("le maître du jeu annonce la mort d\'Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }
