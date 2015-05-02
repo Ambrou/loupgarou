@@ -49,23 +49,11 @@ namespace JeuDuLoupGarou
 
             if (villageoisAyantVote.Count(villageois => villageois.ayantVote == false ) == 0)
             {
-                int nbVoteMax = 0;
-
-                foreach (var resultat in resultatDElection)
+                var villageoisAyantRecuUnVote = resultatDElection.Where(r => r.Value != 0).OrderByDescending(r => r.Value).ToList();
+                var nbVote = villageoisAyantRecuUnVote.Max(v => v.Value);
+                if(villageoisAyantRecuUnVote.Where(v => v.Value == nbVote).Count() == 1)
                 {
-                    if (nbVoteMax < resultat.Value)
-                    {
-                        nbVoteMax = resultat.Value;
-                        NomDuProchainMort = resultat.Key;
-                    }
-                }
-
-                if (nbVoteMax != 0)
-                {
-                    if (resultatDElection.Count(element => element.Value == nbVoteMax) > 1)
-                    {
-                        NomDuProchainMort = "";
-                    }
+                    NomDuProchainMort = villageoisAyantRecuUnVote.Where(v => v.Value == nbVote).ToList()[0].Key;
                 }
             }
             return NomDuProchainMort;
@@ -79,9 +67,7 @@ namespace JeuDuLoupGarou
 
         public void commencerLeDebat()
         {
-            var liste = from joueur in attributionDesRolesParJoueur
-                        select new VillageoisAyantVote() { nomDuJoueur = joueur.Key, ayantVote = false };
-            villageoisAyantVote = liste.ToList();
+            villageoisAyantVote = attributionDesRolesParJoueur.Select(j => new VillageoisAyantVote { nomDuJoueur = j.Key, ayantVote = false }).ToList();
         }
 
         public void activerLesLoups()
@@ -96,10 +82,8 @@ namespace JeuDuLoupGarou
 
         private void activer(string nomDuRole)
         {
-            var liste = from joueur in attributionDesRolesParJoueur
-                        where joueur.Value == nomDuRole
-                        select new VillageoisAyantVote() { nomDuJoueur = joueur.Key, ayantVote = false };
-            villageoisAyantVote = liste.ToList();
+            villageoisAyantVote = attributionDesRolesParJoueur.Where(j => j.Value == nomDuRole)
+                .Select(j => new VillageoisAyantVote { nomDuJoueur = j.Key, ayantVote = false }).ToList();
         }
 
         public string devoileLeRoleDe(string NomDuJoueur)
