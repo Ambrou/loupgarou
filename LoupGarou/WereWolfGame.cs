@@ -43,7 +43,7 @@ namespace JeuDuLoupGarou
             resultatDElection.Add(NomDuJoueur, 0);
         }
 
-        public String estLeProchainMort()
+        public virtual String estLeProchainMort()
         {
             string NomDuProchainMort = "";
 
@@ -105,6 +105,12 @@ namespace JeuDuLoupGarou
         public string devoileLeRoleDe(string NomDuJoueur)
         {
             return attributionDesRolesParJoueur[NomDuJoueur];
+        }
+        public void leverDuSoleil(MaitreDuJeu maitreDuJeu)
+        {
+            maitreDuJeu.annonceLeLeverDuJour();
+            maitreDuJeu.annonceLeProchainMort(estLeProchainMort());
+            maitreDuJeu.annonceLeRole(attributionDesRolesParJoueur[estLeProchainMort()]);
         }
     }
 }

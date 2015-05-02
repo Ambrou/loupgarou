@@ -78,23 +78,29 @@ namespace LoupGarou.Specs.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Le jour se lève")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Le jour se lève avec un mort")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Déroulement du jeu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("maitreDuJeu")]
-        public virtual void LeJourSeLeve()
+        public virtual void LeJourSeLeveAvecUnMort()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le jour se lève", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le jour se lève avec un mort", new string[] {
                         "maitreDuJeu"});
 #line 10
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 11
-    testRunner.Given("le prochain mort Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+    testRunner.Given("Ambroise est la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 12
- testRunner.When("le jour se léve", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("le prochain mort Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 13
- testRunner.Then("le maître du jeu annonce la mort d\'Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+ testRunner.When("le jour se léve", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 14
+ testRunner.Then("le maître du jeu annonce le lever du jour", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 15
+ testRunner.And("la mort d\'Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 16
+ testRunner.And("le role d\'Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }
