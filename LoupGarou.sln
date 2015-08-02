@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Test", "LoupGarouTest\LoupGarou.Test.csproj", "{6DA17074-DC51-43E4-9D3B-BC1B6D5FD5F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Specs", "LoupGarou.Specs\LoupGarou.Specs.csproj", "{1457EC08-914D-4C5E-8D33-AFFBD7D56875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "LoupGarou.Core\ClassLibrary1\ClassLibrary1.csproj", "{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Core", "LoupGarou.Core\ClassLibrary1\LoupGarou.Core.csproj", "{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
