@@ -56,77 +56,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\RoleDeLaVoyante.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoleDeLaVoyante.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\RoleDuChasseur.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoleDuChasseur.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\RoleDuLoupGarou.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoleDuLoupGarou.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\RoleDuVillageois.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoleDuVillageois.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Sources\RoleDuChasseurSteps.cs" />
-    <Compile Include="Sources\RoleDuLoupGarouSteps.cs" />
-    <Compile Include="Sources\DeroulementDuJeuSteps.cs" />
-    <Compile Include="Features\DeroulementDuJeu.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DeroulementDuJeu.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\RoleDeLaSorciere.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoleDeLaSorciere.feature</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\RoleDeLaSorciereSteps.cs" />
-    <Compile Include="Sources\RoleDeLaVoyanteSteps.cs" />
-    <Compile Include="Sources\RoleDuVillageoisSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\DeroulementDuJeu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DeroulementDuJeu.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\RoleDeLaSorciere.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RoleDeLaSorciere.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\RoleDeLaVoyante.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RoleDeLaVoyante.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\RoleDuChasseur.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RoleDuChasseur.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\RoleDuLoupGarou.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RoleDuLoupGarou.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\RoleDuVillageois.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RoleDuVillageois.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoupGarou\JeuDuLoupGarou.csproj">
-      <Project>{08419efd-835a-4e35-9ef0-d0e55bf24223}</Project>
-      <Name>JeuDuLoupGarou</Name>
-    </ProjectReference>
+    <Folder Include="Features\" />
+    <Folder Include="Sources\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
