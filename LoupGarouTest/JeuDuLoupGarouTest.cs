@@ -69,9 +69,9 @@ namespace LoupGarou.Test
         #endregion
 
         [TestMethod]
-        [DeploymentItem("\\JeuDuLoupGarou.Test.DonneInformationRole.Data.xml")]
+        [DeploymentItem("\\Data\\JeuDuLoupGarou.Test.DonneInformationRole.Data.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "|DataDirectory|\\JeuDuLoupGarou.Test.DonneInformationRole.Data.xml",
+            "|DataDirectory|\\Data\\JeuDuLoupGarou.Test.DonneInformationRole.Data.xml",
             "Row", DataAccessMethod.Sequential)]
         public void donneInformationRole()
         {
@@ -83,7 +83,7 @@ namespace LoupGarou.Test
             jeuDuLoupGarou.donneInformationRole(TestContext.DataRow["Role"].ToString(), joueur);
 
             // Assert
-            Assert.AreEqual(TestContext.DataRow["Result"].ToString(), joueur.description);
+            Assert.AreEqual(TestContext.DataRow["Description"].ToString(), joueur.description);
         }
     }
 }

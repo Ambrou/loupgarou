@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DescriptionRoleChasseur" xml:space="preserve">
+    <value>S'il se fait dévorer par les Loups-Garous ou éliminé malencontreusement par les villageois, le Chasseur doit répliquer avant de rendre l'âme, en éliminant immédiatement n'importe quel autre joueur de son choix. Cas particulier: Le chasseur est l'amoureux d'un joueur éliminé, avant de quitter la partie le chasseur doit immédiatement éliminer un autre joueur de son choix. cela peut entraîner une partie où il ne reste aucun joueur survivant. Dans ce cas la victoire n'appartient à aucun des camps.</value>
+    <comment>Description du rôle du chasseur</comment>
+  </data>
+  <data name="DescriptionRoleCupidon" xml:space="preserve">
+    <value>Cupidon, appelé la première nuit. En décochant ses flèches magiques, Cupidon a le pouvoir de rendre deux personnes amoureuses à jamais. La première nuit (tour préliminaire), il désigne les deux joueurs (ou joueuses) amoureux. Cupidon peut, s'il le veut, se désigner comme l'un des deux Amoureux. Si l'un des Amoureux est éliminé, l'autre meurt de chagin immédiatement. Un amoureux ne doit jamais éliminer son aimé, ni lui porter préjudice (même pour faire semblant!). Attention: si l'un des amoureux est un villageois et l'autre un Loup-Garou ou le joueur de flûte, le but de la partie change pour les amoureux. En effet afin de pouvoir vivre en paix leur amour et gagenr la partie, ils doivent éliminer tous les autres joueurs, Loups-Garous et Villageois, en respectant les règles de jeu.</value>
+    <comment>Description du rôle de cupidon</comment>
+  </data>
+  <data name="DescriptionrolePetiteFille" xml:space="preserve">
+    <value>La petite fille peut, en entrouvant les yeux, espionner les Loups-Garous pendant leur réviel. Si elle se fait surprendre par un des Loups-Garous, elle pourra être dévorée immédiatement (en silence), à la place de la victime désignée. La petite fille ne peut espionner que la nuit, durant le tour d'éveil des Loups-Garous. Elle n'a pas le droit de se faire passer pour un Loup-Garou et d'ouvrir grand les yeux.</value>
+    <comment>Description du rôle de la petite fille</comment>
+  </data>
+  <data name="DescriptionRoleSorciere" xml:space="preserve">
+    <value>La sorcière, appelée la nuit. Elle sait concocter deux potion extrêment puissantes: une potion de guérison pour ressuciter le joueur dévoré par les Loups-Garous, une potion d'empoisonnement, utilisée la nuit pour éliminer un joueur. La sorcière doit utiliser chaque potion une seule fois dans la partie. ELle peut se servir de ses deux potions la même nuit. Le matin, suivant la ou les potions utilisées, il pourra y avoir deux joueurs éliminés ou aucun! La sorcière peut également utiliser la potion de guérison à son profit, et donc se guérir elle-même si elle vient d'être dévorée par les Loups-Garous.</value>
+    <comment>Description du rôle de la sorcière</comment>
+  </data>
+  <data name="DescriptionRoleVillageois" xml:space="preserve">
+    <value>Le simple villageois. Il n'a aucune compétance particulière. Ses seules armes sont la capacité d'analyse des comportements pour identifier les Loups-Garous, et la force de conviction pour empêcher l'exécution de l'innocent qu'il est.</value>
+    <comment>Description du rôle de villageois</comment>
+  </data>
+  <data name="DescriptionRoleVoyante" xml:space="preserve">
+    <value>La voyante, appelée la nuit. Chaque nuit, elle voit la carte d'un joueur de son choix. Elle doit aider les autres villageois mais rester discrète pour ne pas être demasquée par les Loups-Garous.</value>
+    <comment>Description du rôle de la voyante</comment>
+  </data>
+  <data name="NomRoleChasseur" xml:space="preserve">
+    <value>chasseur</value>
+    <comment>Nom du rôle du chasseur</comment>
+  </data>
+  <data name="NomRoleCupidon" xml:space="preserve">
+    <value>cupidon</value>
+    <comment>Nom du rôle de cupidon</comment>
+  </data>
+  <data name="NomRolePetiteFille" xml:space="preserve">
+    <value>petite fille</value>
+    <comment>Nom du rôle de la petite fille</comment>
+  </data>
+  <data name="NomRoleSorciere" xml:space="preserve">
+    <value>sorcière</value>
+    <comment>Nom du rôle de la sorcière</comment>
+  </data>
+  <data name="NomRoleVillageois" xml:space="preserve">
+    <value>villageois</value>
+    <comment>Nom du rôle du villageois</comment>
+  </data>
+  <data name="NomRoleVoyante" xml:space="preserve">
+    <value>voyante</value>
+    <comment>Nom du rôle de la voyante</comment>
+  </data>
+</root>
