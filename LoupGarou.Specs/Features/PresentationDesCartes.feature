@@ -6,7 +6,7 @@
 Contexte: 
 	Soit le jeu du loup garou
 
-@MaitreDuJeu
+@Novice
 Scénario: Demande de la déscription d'un role
 	Soit moi un joueur novice
 	Lorsque je demande les informations d'un rôle

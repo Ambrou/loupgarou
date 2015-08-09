@@ -56,16 +56,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\Introduction.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Introduction.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\PresentationDesCartes.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PresentationDesCartes.feature</DependentUpon>
     </Compile>
+    <Compile Include="Sources\IntroductionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\PresentationDesCartesSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Introduction.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Introduction.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\PresentationDesCartes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PresentationDesCartes.feature.cs</LastGenOutput>

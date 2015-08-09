@@ -19,20 +19,20 @@ namespace LoupGarou.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class PresentationDesCartesFeature
+    public partial class IntroductionFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "PresentationDesCartes.feature"
+#line 1 "Introduction.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Presentation des cartes", "Dans le but de jouer correctement\nEn tant que nouveau joueur\nJe veux une explicat" +
-                    "ion des différents rôles", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Introduction", "Dans le but de poser l\'ambiance\nEn tant que maître du jeu\nJe veux présenter le vi" +
+                    "llage", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,9 +47,9 @@ namespace LoupGarou.Specs.Features
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Presentation des cartes")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Introduction")))
             {
-                LoupGarou.Specs.Features.PresentationDesCartesFeature.FeatureSetup(null);
+                LoupGarou.Specs.Features.IntroductionFeature.FeatureSetup(null);
             }
         }
         
@@ -69,32 +69,23 @@ namespace LoupGarou.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
- testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line hidden
-        }
-        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demande de la déscription d\'un role")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Presentation des cartes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Novice")]
-        public virtual void DemandeDeLaDescriptionDUnRole()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Démarrage de la partie")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Introduction")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MaitreDuJeu")]
+        public virtual void DemarrageDeLaPartie()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demande de la déscription d\'un role", new string[] {
-                        "Novice"});
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Démarrage de la partie", new string[] {
+                        "MaitreDuJeu"});
+#line 7
 this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 11
- testRunner.Given("moi un joueur novice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 12
- testRunner.When("je demande les informations d\'un rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
-#line 13
- testRunner.Then("le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 8
+ testRunner.Given("une partie en cours de création", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 9
+ testRunner.When("tous les joueurs sont présents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 10
+ testRunner.Then("le maitre du jeu commence la présentation du village aux villageois et de son his" +
+                    "toire", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }
