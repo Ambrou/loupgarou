@@ -3,6 +3,9 @@
 	En tant que maître du jeu
 	Je veux présenter le village
 
+Contexte: 
+	Soit le jeu du loup garou
+
 @MaitreDuJeu
 Scénario: Démarrage de la partie
 	Soit une partie en cours de création

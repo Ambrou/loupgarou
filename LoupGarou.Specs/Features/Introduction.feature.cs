@@ -69,6 +69,14 @@ namespace LoupGarou.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line 7
+ testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line hidden
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Démarrage de la partie")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Introduction")]
@@ -77,13 +85,15 @@ namespace LoupGarou.Specs.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Démarrage de la partie", new string[] {
                         "MaitreDuJeu"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("une partie en cours de création", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 9
- testRunner.When("tous les joueurs sont présents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
 #line 10
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 11
+ testRunner.Given("une partie en cours de création", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 12
+ testRunner.When("tous les joueurs sont présents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 13
  testRunner.Then("le maitre du jeu commence la présentation du village aux villageois et de son his" +
                     "toire", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
