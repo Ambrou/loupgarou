@@ -9,6 +9,19 @@ namespace LoupGarou.Specs.Sources
     {
         Mock<Joueur> mock;
 
+        public Mock<Joueur> Mock
+        {
+            get
+            {
+                return mock;
+            }
+
+            set
+            {
+                mock = value;
+            }
+        }
+
         [Given(@"le jeu du loup garou")]
         public void SoitLeJeuDuLoupGarou()
         {
@@ -18,14 +31,14 @@ namespace LoupGarou.Specs.Sources
         [Given(@"moi un joueur novice")]
         public void SoitMoiUnJoueurNovice()
         {
-            mock = new Mock<Joueur>();
+            Mock = new Mock<Joueur>();
         }
         
         [When(@"je demande les informations d'un rôle")]
         public void QuandJeDemandeLesInformationsDUnRole()
         {
-            mock.Setup(joueur => joueur.afficheInformationRole("balbla"));
-            Joueur joueurMock = mock.Object;
+            Mock.Setup(joueur => joueur.afficheInformationRole("balbla"));
+            Joueur joueurMock = Mock.Object;
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.donneInformationRole("voyante", joueurMock);
         }
@@ -33,7 +46,7 @@ namespace LoupGarou.Specs.Sources
         [Then(@"le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité")]
         public void AlorsLeMaitreDuJeuMeDonneQuandLeRoleAgitSonPouvoirEtSubtilite()
         {
-            mock.Verify();
+            Mock.Verify();
         }
     }
 }

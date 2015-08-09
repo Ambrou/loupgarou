@@ -90,9 +90,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 11
- testRunner.Given("une partie en cours de création", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+ testRunner.Given("un maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 12
- testRunner.When("tous les joueurs sont présents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+ testRunner.When("la partie commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
 #line 13
  testRunner.Then("le maitre du jeu commence la présentation du village aux villageois et de son his" +
                     "toire", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");

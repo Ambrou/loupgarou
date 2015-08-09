@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Specs", "LoupGaro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Core", "LoupGarou.Core\ClassLibrary1\LoupGarou.Core.csproj", "{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupGarou.Console", "LoupGarou.Console\LoupGarou.Console.csproj", "{3220EF86-12FA-4106-AF86-6DC0B873749B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AB99F3-618C-4C7D-81DE-18B09FFACD1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3220EF86-12FA-4106-AF86-6DC0B873749B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3220EF86-12FA-4106-AF86-6DC0B873749B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3220EF86-12FA-4106-AF86-6DC0B873749B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3220EF86-12FA-4106-AF86-6DC0B873749B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

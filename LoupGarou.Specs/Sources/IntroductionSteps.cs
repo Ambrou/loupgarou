@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LoupGarou.Core;
+using Moq;
+using System;
 using TechTalk.SpecFlow;
 
 namespace LoupGarou.Specs
@@ -6,23 +8,42 @@ namespace LoupGarou.Specs
     [Binding]
     public class IntroductionSteps
     {
-        [Given(@"une partie en cours de création")]
-        public void SoitUnePartieEnCoursDeCreation()
+        Mock<MaitreDuJeu> mock;
+
+        public Mock<MaitreDuJeu> Mock
         {
-            ScenarioContext.Current.Pending();
+            get
+            {
+                return mock;
+            }
+
+            set
+            {
+                mock = value;
+            }
         }
-        
-        [When(@"tous les joueurs sont présents")]
-        public void QuandTousLesJoueursSontPresents()
+
+        [Given(@"un maitre du jeu")]
+        public void SoitUnMaitreDuJeu()
         {
-            ScenarioContext.Current.Pending();
+            Mock = new Mock<MaitreDuJeu>();
+            MaitreDuJeu maitreDuJeuMock = Mock.Object;
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(maitreDuJeuMock);
         }
-        
+
+        [When(@"la partie commence")]
+        public void QuandLaPartieCommence()
+        {
+            Mock.Setup(mj => mj.conter("blabla"));
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.commencerPartie();
+        }
+
         [Then(@"le maitre du jeu commence la présentation du village aux villageois et de son histoire")]
         public void AlorsLeMaitreDuJeuCommenceLaPresentationDuVillageAuxVillageoisEtDeSonHistoire()
         {
-            ScenarioContext.Current.Pending();
+            Mock.Verify();
         }
-
     }
 }

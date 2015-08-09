@@ -168,5 +168,14 @@ namespace LoupGarou.Core.Properties {
                 return ResourceManager.GetString("NomRoleVoyante", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Au trés fond d&apos;un forêt, à flan de montagne, un petit village est depuis peu devenu la proie de Loups Garous. Des meurtres ignobles sont commis chaque nuit par certains habitants du village, devenus Lycanthropes à cause d&apos;un phénomène mystérieux... Les villageois doivent se ressaisir pour éradiquer ce nouveau fléau venu du fons des âges, avant que le village ne perde ses derniers habitants..
+        /// </summary>
+        public static string PresentationDuJeu {
+            get {
+                return ResourceManager.GetString("PresentationDuJeu", resourceCulture);
+            }
+        }
     }
 }

@@ -8,6 +8,6 @@ Contexte:
 
 @MaitreDuJeu
 Scénario: Démarrage de la partie
-	Soit une partie en cours de création
-	Quand tous les joueurs sont présents
+	Soit un maitre du jeu
+	Quand la partie commence
 	Alors le maitre du jeu commence la présentation du village aux villageois et de son histoire

@@ -21,6 +21,16 @@ namespace LoupGarou.Test
             }
         }
 
+        internal class MonMaitreDuJeu : MaitreDuJeu
+        {
+            public string description;
+
+            public void conter(string texte)
+            {
+                description = texte;
+            }
+        }
+
         public JeuDuLoupGarouTest()
         {
             //
@@ -84,6 +94,21 @@ namespace LoupGarou.Test
 
             // Assert
             Assert.AreEqual(TestContext.DataRow["Description"].ToString(), joueur.description);
+        }
+
+        [TestMethod]
+        public void commencerLaPartie()
+        {
+            // Arrange
+            JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
+            MonMaitreDuJeu maitreDuJeu = new MonMaitreDuJeu();
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(maitreDuJeu);
+
+            // Act
+            jeuDuLoupGarou.commencerPartie();
+
+            // Assert
+            Assert.AreEqual("Au trés fond d'un forêt, à flan de montagne, un petit village est depuis peu devenu la proie de Loups Garous. Des meurtres ignobles sont commis chaque nuit par certains habitants du village, devenus Lycanthropes à cause d'un phénomène mystérieux... Les villageois doivent se ressaisir pour éradiquer ce nouveau fléau venu du fons des âges, avant que le village ne perde ses derniers habitants.", maitreDuJeu.description);
         }
     }
 }
