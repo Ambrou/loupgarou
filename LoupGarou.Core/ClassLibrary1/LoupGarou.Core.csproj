@@ -41,7 +41,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface1.cs" />
     <Compile Include="JeuDuLoupGarou.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="MaitreDuJeu.cs" />

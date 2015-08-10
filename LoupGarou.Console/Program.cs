@@ -12,7 +12,9 @@ namespace LoupGarou.Console
         static void Main(string[] args)
         {
             JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
-            jeuDuLoupGarou.avecCommeMaitreDuJeu
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(new MaitreDuJeuConsole());
+
+            jeuDuLoupGarou.commencerPartie();
         }
     }
 }
