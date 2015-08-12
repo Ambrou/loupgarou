@@ -56,6 +56,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\ConnexionDesJoueurs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnexionDesJoueurs.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Introduction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\ConnexionDesJoueurs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConnexionDesJoueurs.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Introduction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Introduction.feature.cs</LastGenOutput>
