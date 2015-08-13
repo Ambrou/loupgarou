@@ -1,11 +1,13 @@
 ﻿Fonctionnalité: ConnexionDesJoueurs
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	Dans le but de jouer avec des gens
+	En tant que Maitre du Jeu
+	Je veux que les joueurs se connectent au jeu
 
-@mytag
-Scénario: Add two numbers
-	Soit I have entered 50 into the calculator
-	Et I have entered 70 into the calculator
-	Quand I press add
-	Alors the result should be 120 on the screen
+Contexte: 
+	Soit le jeu du loup garou
+
+@MaitreDuJeu
+Scénario: Connexion au jeu
+	Soit le jeu est en attente de joueurs
+	Quand je me connecte avec mon nom qui est Ambroise
+	Alors Ambroise fait partie de joueurs

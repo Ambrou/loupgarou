@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PresentationDesCartes.feature</DependentUpon>
     </Compile>
+    <Compile Include="Sources\ConnexionDesJoueursSteps.cs" />
     <Compile Include="Sources\IntroductionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\PresentationDesCartesSteps.cs" />

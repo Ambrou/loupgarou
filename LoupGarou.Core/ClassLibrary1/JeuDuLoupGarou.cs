@@ -18,6 +18,11 @@ namespace LoupGarou.Core
             descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleChasseur,    LoupGarou.Core.Properties.Resources.DescriptionRoleChasseur);
         }
 
+        public void attendLesJoueurs()
+        {
+            throw new NotImplementedException();
+        }
+
         public void avecCommeMaitreDuJeu(MaitreDuJeu maitreDuJeu)
         {
             this.maitreDuJeu = maitreDuJeu;

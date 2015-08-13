@@ -8,7 +8,19 @@ namespace LoupGarou.Core
 {
     public class Joueur
     {
+        private string nom;
+
+        public Joueur(string nom)
+        {
+            this.nom = nom;
+        }
+
         public virtual void afficheInformationRole(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void seConnecte(JeuDuLoupGarou jeuDuLoupGarou)
         {
             throw new NotImplementedException();
         }
