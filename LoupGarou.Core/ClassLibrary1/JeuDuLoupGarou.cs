@@ -19,6 +19,11 @@ namespace LoupGarou.Core
             descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleChasseur,    LoupGarou.Core.Properties.Resources.DescriptionRoleChasseur);
         }
 
+        internal void ajouterJoueur(Joueur joueur)
+        {
+            listeDesJoueurs.Add(joueur);
+        }
+
         public bool contientLejoueur(string nomDuJoueur)
         {
             bool joueurEstPresent = false;

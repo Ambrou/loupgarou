@@ -9,6 +9,7 @@ namespace LoupGarou.Core
     public class Joueur
     {
         private string nom;
+        private JeuDuLoupGarou jeuDuLoupGarou;
 
         public Joueur(string nom)
         {
@@ -35,7 +36,13 @@ namespace LoupGarou.Core
 
         public void seConnecte(JeuDuLoupGarou jeuDuLoupGarou)
         {
-            
+            this.jeuDuLoupGarou = jeuDuLoupGarou;
+            this.jeuDuLoupGarou.ajouterJoueur(this);
+        }
+
+        public void demandeInformationRole(string nomDuRole)
+        {
+            jeuDuLoupGarou.donneInformationRole(nomDuRole, this);
         }
     }
 }

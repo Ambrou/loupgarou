@@ -1,52 +1,53 @@
-﻿using LoupGarou.Core;
+﻿using System;
+using LoupGarou.Core;
 using Moq;
 using TechTalk.SpecFlow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LoupGarou.Specs.Sources
 {
     [Binding]
     public class PresentationDesCartesSteps
     {
-        Mock<Joueur> mock;
-
-        public Mock<Joueur> Mock
+        internal class JoueurNovice : Joueur
         {
-            get
+            public string descriptionRole;
+
+            public JoueurNovice() : base("Novice")
             {
-                return mock;
             }
 
-            set
+            public override void afficheInformationRole(string v)
             {
-                mock = value;
+                descriptionRole = v;
             }
         }
+
+        JoueurNovice joueurNovice;
 
         [Given(@"le jeu du loup garou")]
         public void SoitLeJeuDuLoupGarou()
         {
             ScenarioContext.Current.Set<JeuDuLoupGarou>(new JeuDuLoupGarou());
         }
-        
+
         [Given(@"moi un joueur novice")]
         public void SoitMoiUnJoueurNovice()
         {
-            Mock = new Mock<Joueur>();
+            joueurNovice = new JoueurNovice();
+            joueurNovice.seConnecte(ScenarioContext.Current.Get<JeuDuLoupGarou>());
         }
-        
+
         [When(@"je demande les informations d'un rôle")]
         public void QuandJeDemandeLesInformationsDUnRole()
         {
-            Mock.Setup(joueur => joueur.afficheInformationRole("balbla"));
-            Joueur joueurMock = Mock.Object;
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.donneInformationRole("voyante", joueurMock);
+            joueurNovice.demandeInformationRole("voyante");
         }
-        
+
         [Then(@"le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité")]
         public void AlorsLeMaitreDuJeuMeDonneQuandLeRoleAgitSonPouvoirEtSubtilite()
         {
-            Mock.Verify();
+            Assert.AreEqual("La voyante, appelée la nuit. Chaque nuit, elle voit la carte d'un joueur de son choix. Elle doit aider les autres villageois mais rester discrète pour ne pas être demasquée par les Loups-Garous.", joueurNovice.descriptionRole);
         }
     }
 }
