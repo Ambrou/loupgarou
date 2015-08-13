@@ -31,8 +31,8 @@ namespace LoupGarou.Specs.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "ConnexionDesJoueurs", "Dans le but de jouer avec des gens\nEn tant que Maitre du Jeu\nJe veux que les joue" +
-                    "urs se connectent au jeu", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "ConnexionDesJoueurs", "Dans le but de jouer avec des gens\r\nEn tant que Maitre du Jeu\r\nJe veux que les jo" +
+                    "ueurs se connectent au jeu", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -90,10 +90,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 11
- testRunner.Given("le jeu est en attente de joueurs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 12
  testRunner.When("je me connecte avec mon nom qui est Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line 13
+#line 12
  testRunner.Then("Ambroise fait partie de joueurs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();

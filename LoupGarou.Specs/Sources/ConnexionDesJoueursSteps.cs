@@ -1,4 +1,5 @@
 ﻿using LoupGarou.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TechTalk.SpecFlow;
 
@@ -8,13 +9,8 @@ namespace LoupGarou.Specs.Sources
     public class ConnexionDesJoueursSteps
     {
         Joueur joueur;
-        [Given(@"le jeu est en attente de joueurs")]
-        public void SoitLeJeuEstEnAttenteDeJoueurs()
-        {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.attendLesJoueurs();
-        }
 
+       
         [When(@"je me connecte avec mon nom qui est Ambroise")]
         public void QuandJeMeConnecteAvecMonNomQuiEstAmbroise()
         {
@@ -27,7 +23,7 @@ namespace LoupGarou.Specs.Sources
         public void AlorsAmbroiseFaitPartieDeJoueurs()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            Assert.AreEqual(joueur., joueur.description);
+            Assert.AreEqual(true, jeuDuLoupGarou.contientLejoueur("Ambroise"));
         }
 
     }

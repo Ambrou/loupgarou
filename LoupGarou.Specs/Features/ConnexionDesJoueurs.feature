@@ -8,6 +8,5 @@ Contexte:
 
 @MaitreDuJeu
 Scénario: Connexion au jeu
-	Soit le jeu est en attente de joueurs
 	Quand je me connecte avec mon nom qui est Ambroise
 	Alors Ambroise fait partie de joueurs

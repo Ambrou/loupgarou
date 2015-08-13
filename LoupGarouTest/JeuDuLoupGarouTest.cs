@@ -15,6 +15,10 @@ namespace LoupGarou.Test
         {
             public string description;
 
+            public MonJoueur() : base ("JoueurLambda")
+            {
+            }
+
             public override void afficheInformationRole(string v)
             {
                 description = v;

@@ -15,6 +15,19 @@ namespace LoupGarou.Core
             this.nom = nom;
         }
 
+        public string Nom
+        {
+            get
+            {
+                return nom;
+            }
+
+            set
+            {
+                nom = value;
+            }
+        }
+
         public virtual void afficheInformationRole(string v)
         {
             throw new NotImplementedException();
@@ -22,7 +35,7 @@ namespace LoupGarou.Core
 
         public void seConnecte(JeuDuLoupGarou jeuDuLoupGarou)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
