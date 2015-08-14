@@ -1,0 +1,14 @@
+﻿################################################################################
+# Ce fichier .gitignore a été créé automatiquement par Microsoft(R) Visual Studio.
+################################################################################
+
+/TestResults
+/LoupGarou.Console/bin/Debug
+/LoupGarou.Core/ClassLibrary1/bin/Debug
+/LoupGarou.Core/ClassLibrary1/obj/Debug
+/LoupGarou.Console/obj/Debug
+*.suo
+/LoupGarou.Specs/bin/Debug
+/LoupGarouTest/bin/Debug
+/LoupGarouTest/obj/Debug
+/LoupGarou.Specs/obj/Debug
