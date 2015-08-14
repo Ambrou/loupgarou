@@ -61,6 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Introduction.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\PeuplerLeVillage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeuplerLeVillage.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\PresentationDesCartes.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +80,10 @@
     <None Include="Features\Introduction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Introduction.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\PeuplerLeVillage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PeuplerLeVillage.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\PresentationDesCartes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
