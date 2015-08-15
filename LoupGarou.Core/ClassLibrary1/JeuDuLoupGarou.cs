@@ -8,6 +8,7 @@ namespace LoupGarou.Core
         private Dictionary<string, string> descriptionParRole = new Dictionary<string, string>();
         MaitreDuJeu maitreDuJeu = null;
         public List<Joueur> listeDesJoueurs = new List<Joueur>();
+        int nombreHabitants = 0;
 
         public JeuDuLoupGarou()
         {
@@ -19,23 +20,32 @@ namespace LoupGarou.Core
             descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleChasseur,    LoupGarou.Core.Properties.Resources.DescriptionRoleChasseur);
         }
 
+        public void creerUnVillageAvecHabitants(int p0)
+        {
+            nombreHabitants = p0;
+        }
+
         internal void ajouterJoueur(Joueur joueur)
         {
             listeDesJoueurs.Add(joueur);
+
+            if(nombreHabitants == listeDesJoueurs.Count)
+            {
+                commencerPartie();
+            }
         }
 
         public bool contientLejoueur(string nomDuJoueur)
         {
             bool joueurEstPresent = false;
 
-            foreach (var joueur in listeDesJoueurs) // Loop through List with foreach.
+            foreach (var joueur in listeDesJoueurs)
             {
                 if(joueur.Nom == nomDuJoueur)
                 {
                     joueurEstPresent = true;
                 }
             }
-
             return joueurEstPresent;
         }
 

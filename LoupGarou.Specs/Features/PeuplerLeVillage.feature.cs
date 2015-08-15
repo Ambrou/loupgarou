@@ -31,8 +31,8 @@ namespace LoupGarou.Specs.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "PeuplerLeVillage", "In order to avoid silly mistakes\nAs a math idiot\nI want to be told the sum of two" +
-                    " numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Peupler Le Village", "Dans le but de jouer avec des copains\r\nEn tant que joueur\r\nJe veux créer un villa" +
+                    "ge", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,7 +47,7 @@ namespace LoupGarou.Specs.Features
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "PeuplerLeVillage")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Peupler Le Village")))
             {
                 LoupGarou.Specs.Features.PeuplerLeVillageFeature.FeatureSetup(null);
             }
@@ -69,24 +69,36 @@ namespace LoupGarou.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line 7
+ testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 8
+ testRunner.And("un maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line hidden
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Création du village")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PeuplerLeVillage")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Peupler Le Village")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Création")]
         public virtual void CreationDuVillage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Création du village", new string[] {
-                        "mytag"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
-#line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+                        "Création"});
 #line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 12
+ testRunner.Given("8 habitants sont attendus", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 13
+ testRunner.And("Il y a déjà 7 habitants dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 14
+ testRunner.When("le 8em habitant arrive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 16
+ testRunner.Then("le maitre du jeu pose le decor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }

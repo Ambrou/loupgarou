@@ -34,7 +34,7 @@ namespace LoupGarou.Core
             throw new NotImplementedException();
         }
 
-        public void seConnecte(JeuDuLoupGarou jeuDuLoupGarou)
+        public void emmenage(JeuDuLoupGarou jeuDuLoupGarou)
         {
             this.jeuDuLoupGarou = jeuDuLoupGarou;
             this.jeuDuLoupGarou.ajouterJoueur(this);

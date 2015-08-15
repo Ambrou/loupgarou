@@ -35,7 +35,7 @@ namespace LoupGarou.Specs.Sources
         public void SoitMoiUnJoueurNovice()
         {
             joueurNovice = new JoueurNovice();
-            joueurNovice.seConnecte(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            joueurNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
         }
 
         [When(@"je demande les informations d'un rôle")]

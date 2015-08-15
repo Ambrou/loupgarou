@@ -26,8 +26,10 @@ namespace LoupGarou.Specs
         [Given(@"un maitre du jeu")]
         public void SoitUnMaitreDuJeu()
         {
+
             Mock = new Mock<MaitreDuJeu>();
             MaitreDuJeu maitreDuJeuMock = Mock.Object;
+            ScenarioContext.Current.Set<Mock<MaitreDuJeu> >(Mock);
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(maitreDuJeuMock);
         }
@@ -35,7 +37,6 @@ namespace LoupGarou.Specs
         [When(@"la partie commence")]
         public void QuandLaPartieCommence()
         {
-            Mock.Setup(mj => mj.conter("blabla"));
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.commencerPartie();
         }
@@ -43,7 +44,7 @@ namespace LoupGarou.Specs
         [Then(@"le maitre du jeu commence la présentation du village aux villageois et de son histoire")]
         public void AlorsLeMaitreDuJeuCommenceLaPresentationDuVillageAuxVillageoisEtDeSonHistoire()
         {
-            Mock.Verify();
+            Mock.Verify(mj => mj.conter(It.IsAny<string>()));
         }
     }
 }
