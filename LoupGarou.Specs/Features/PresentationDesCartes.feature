@@ -9,6 +9,6 @@ Contexte:
 @Novice
 Scénario: Demande de la déscription d'un role
 	Soit moi un joueur novice
-	Lorsque je demande les informations d'un rôle
+	Lorsque je demande les informations d'un rôle au maitre du jeu
 	Alors le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité
 

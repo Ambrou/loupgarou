@@ -92,7 +92,7 @@ this.FeatureBackground();
 #line 11
  testRunner.Given("moi un joueur novice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 12
- testRunner.When("je demande les informations d\'un rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.When("je demande les informations d\'un rôle au maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
 #line 13
  testRunner.Then("le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden

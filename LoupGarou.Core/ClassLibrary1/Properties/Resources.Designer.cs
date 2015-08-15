@@ -177,5 +177,14 @@ namespace LoupGarou.Core.Properties {
                 return ResourceManager.GetString("PresentationDuJeu", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bienvenue dans notre village.
+        /// </summary>
+        public static string SalutationHabitant {
+            get {
+                return ResourceManager.GetString("SalutationHabitant", resourceCulture);
+            }
+        }
     }
 }

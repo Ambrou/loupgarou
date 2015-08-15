@@ -82,11 +82,11 @@ namespace LoupGarou.Specs.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Création du village")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Peupler Le Village")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Création")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Village")]
         public virtual void CreationDuVillage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Création du village", new string[] {
-                        "Création"});
+                        "Village"});
 #line 11
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -99,6 +99,67 @@ this.FeatureBackground();
  testRunner.When("le 8em habitant arrive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
 #line 16
  testRunner.Then("le maitre du jeu pose le decor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un habitant emménage dans le village")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Peupler Le Village")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Village")]
+        public virtual void UnHabitantEmmenageDansLeVillage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un habitant emménage dans le village", new string[] {
+                        "Village"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 20
+ testRunner.Given("le migrant Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 21
+ testRunner.When("il emmenage dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsqu\'");
+#line 22
+ testRunner.Then("Ambroise est un habitant du village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 23
+ testRunner.And("le maitre du jeu salut Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Attribution des rôles aux habitants du village")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Peupler Le Village")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Village")]
+        public virtual void AttributionDesRolesAuxHabitantsDuVillage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attribution des rôles aux habitants du village", new string[] {
+                        "Village"});
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 27
+ testRunner.Given("un village simplifiée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 28
+ testRunner.And("il est peuplé de 8 habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 29
+ testRunner.When("le village est crée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "role",
+                        "quantité"});
+            table1.AddRow(new string[] {
+                        "voyante",
+                        "1"});
+            table1.AddRow(new string[] {
+                        "loup garou",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "villageois",
+                        "5"});
+#line 30
+ testRunner.Then("il y a dans le village:", ((string)(null)), table1, "Alors ");
 #line hidden
             this.ScenarioCleanup();
         }

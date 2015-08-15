@@ -9,5 +9,6 @@ namespace LoupGarou.Core
     public interface MaitreDuJeu
     {
         void conter(string texte);
+        void saluer(Habitant habitant, string salutation);
     }
 }

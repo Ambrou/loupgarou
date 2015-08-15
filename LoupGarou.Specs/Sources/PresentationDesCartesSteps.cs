@@ -9,7 +9,7 @@ namespace LoupGarou.Specs.Sources
     [Binding]
     public class PresentationDesCartesSteps
     {
-        internal class JoueurNovice : Joueur
+        internal class JoueurNovice : Habitant
         {
             public string descriptionRole;
 
@@ -35,10 +35,10 @@ namespace LoupGarou.Specs.Sources
         public void SoitMoiUnJoueurNovice()
         {
             joueurNovice = new JoueurNovice();
-            joueurNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            //joueurNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
         }
 
-        [When(@"je demande les informations d'un rôle")]
+        [When(@"je demande les informations d'un rôle au maitre du jeu")]
         public void QuandJeDemandeLesInformationsDUnRole()
         {
             joueurNovice.demandeInformationRole("voyante");

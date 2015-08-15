@@ -1,4 +1,5 @@
 ﻿using LoupGarou.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using TechTalk.SpecFlow;
@@ -8,6 +9,9 @@ namespace LoupGarou.Specs.Sources
     [Binding]
     public class PeuplerLeVillageSteps
     {
+        Habitant habitant;
+
+
         [Given(@"(.*) habitants sont attendus")]
         public void SoitHabitantsSontAttendus(int p0)
         {
@@ -21,8 +25,8 @@ namespace LoupGarou.Specs.Sources
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             for (int iLoop = 0; iLoop < p0; ++iLoop)
             {
-                Joueur joueur = new Joueur(iLoop.ToString());
-                joueur.emmenage(jeuDuLoupGarou);
+                habitant = new Habitant(iLoop.ToString());
+                habitant.emmenage(jeuDuLoupGarou);
             }
         }
         
@@ -30,8 +34,8 @@ namespace LoupGarou.Specs.Sources
         public void QuandLeEmHabitantArrive(int p0)
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            Joueur joueur = new Joueur(p0.ToString());
-            joueur.emmenage(jeuDuLoupGarou);
+            habitant = new Habitant(p0.ToString());
+            habitant.emmenage(jeuDuLoupGarou);
         }
         
         //[Then(@"le village est crée")]
@@ -46,5 +50,33 @@ namespace LoupGarou.Specs.Sources
             var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
             mock.Verify(mj => mj.conter(It.IsAny<string>()));
         }
+
+        [Given(@"le migrant (.*)")]
+        public void SoitLeMigrantAmbroise(string p0)
+        {
+            habitant = new Habitant(p0);
+        }
+
+        [When(@"il emmenage dans le village")]
+        public void QuandAmbroiseEmmenageDansLeVillage()
+        {
+            habitant.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+        }
+
+        [Then(@"(.*) est un habitant du village")]
+        public void AlorsAmbroiseEstUnHabitantDuVillage(string p0)
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            Assert.AreEqual(true, jeuDuLoupGarou.contientLHabitant(p0));
+        }
+
+        [Then(@"le maitre du jeu salut (.*)")]
+        public void AlorsLeMaitreDuJeuSalutAmbroise(string p0)
+        {
+            var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            mock.Verify(mj => mj.saluer(habitant, "Bienvenue dans notre village"));
+        }
+
+
     }
 }

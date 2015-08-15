@@ -7,7 +7,7 @@ namespace LoupGarou.Core
     {
         private Dictionary<string, string> descriptionParRole = new Dictionary<string, string>();
         MaitreDuJeu maitreDuJeu = null;
-        public List<Joueur> listeDesJoueurs = new List<Joueur>();
+        public List<Habitant> listeDesJoueurs = new List<Habitant>();
         int nombreHabitants = 0;
 
         public JeuDuLoupGarou()
@@ -25,9 +25,10 @@ namespace LoupGarou.Core
             nombreHabitants = p0;
         }
 
-        internal void ajouterJoueur(Joueur joueur)
+        internal void ajouterJoueur(Habitant habitant)
         {
-            listeDesJoueurs.Add(joueur);
+            listeDesJoueurs.Add(habitant);
+            maitreDuJeu.saluer(habitant, LoupGarou.Core.Properties.Resources.SalutationHabitant);
 
             if(nombreHabitants == listeDesJoueurs.Count)
             {
@@ -35,7 +36,7 @@ namespace LoupGarou.Core
             }
         }
 
-        public bool contientLejoueur(string nomDuJoueur)
+        public bool contientLHabitant(string nomDuJoueur)
         {
             bool joueurEstPresent = false;
 
@@ -59,7 +60,7 @@ namespace LoupGarou.Core
             maitreDuJeu.conter(LoupGarou.Core.Properties.Resources.PresentationDuJeu);
         }
 
-        public void donneInformationRole(string nomDuRole, Joueur joueur)
+        public void donneInformationRole(string nomDuRole, Habitant joueur)
         {
             joueur.afficheInformationRole(descriptionParRole[nomDuRole]);
         }
