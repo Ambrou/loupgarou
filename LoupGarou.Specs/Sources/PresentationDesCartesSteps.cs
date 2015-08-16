@@ -9,11 +9,11 @@ namespace LoupGarou.Specs.Sources
     [Binding]
     public class PresentationDesCartesSteps
     {
-        internal class JoueurNovice : Habitant
+        internal class HabitantNovice : Habitant
         {
             public string descriptionRole;
 
-            public JoueurNovice() : base("Novice")
+            public HabitantNovice() : base("Novice")
             {
             }
 
@@ -23,7 +23,7 @@ namespace LoupGarou.Specs.Sources
             }
         }
 
-        JoueurNovice joueurNovice;
+        HabitantNovice habitantNovice;
 
         [Given(@"le jeu du loup garou")]
         public void SoitLeJeuDuLoupGarou()
@@ -31,23 +31,23 @@ namespace LoupGarou.Specs.Sources
             ScenarioContext.Current.Set<JeuDuLoupGarou>(new JeuDuLoupGarou());
         }
 
-        [Given(@"moi un joueur novice")]
-        public void SoitMoiUnJoueurNovice()
+        [Given(@"moi un habitant novice du village")]
+        public void SoitMoiUnHabitantNoviceDuVillage()
         {
-            joueurNovice = new JoueurNovice();
-            //joueurNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            habitantNovice = new HabitantNovice();
+            habitantNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
         }
 
         [When(@"je demande les informations d'un rôle au maitre du jeu")]
         public void QuandJeDemandeLesInformationsDUnRole()
         {
-            joueurNovice.demandeInformationRole("voyante");
+            habitantNovice.demandeInformationRole("voyante");
         }
 
         [Then(@"le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité")]
         public void AlorsLeMaitreDuJeuMeDonneQuandLeRoleAgitSonPouvoirEtSubtilite()
         {
-            Assert.AreEqual("La voyante, appelée la nuit. Chaque nuit, elle voit la carte d'un joueur de son choix. Elle doit aider les autres villageois mais rester discrète pour ne pas être demasquée par les Loups-Garous.", joueurNovice.descriptionRole);
+            Assert.AreEqual("La voyante, appelée la nuit. Chaque nuit, elle voit la carte d'un joueur de son choix. Elle doit aider les autres villageois mais rester discrète pour ne pas être demasquée par les Loups-Garous.", habitantNovice.descriptionRole);
         }
     }
 }

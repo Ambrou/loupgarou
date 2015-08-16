@@ -5,10 +5,11 @@
 
 Contexte: 
 	Soit le jeu du loup garou
+	Et un maitre du jeu
 
 @Novice
 Scénario: Demande de la déscription d'un role
-	Soit moi un joueur novice
+	Soit moi un habitant novice du village
 	Lorsque je demande les informations d'un rôle au maitre du jeu
 	Alors le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité
 

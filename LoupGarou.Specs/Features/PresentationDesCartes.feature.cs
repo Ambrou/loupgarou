@@ -31,8 +31,8 @@ namespace LoupGarou.Specs.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Presentation des cartes", "Dans le but de jouer correctement\nEn tant que nouveau joueur\nJe veux une explicat" +
-                    "ion des différents rôles", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Presentation des cartes", "Dans le but de jouer correctement\r\nEn tant que nouveau joueur\r\nJe veux une explic" +
+                    "ation des différents rôles", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,6 +74,8 @@ namespace LoupGarou.Specs.Features
 #line 6
 #line 7
  testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 8
+ testRunner.And("un maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
         }
         
@@ -85,15 +87,15 @@ namespace LoupGarou.Specs.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demande de la déscription d\'un role", new string[] {
                         "Novice"});
-#line 10
+#line 11
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 11
- testRunner.Given("moi un joueur novice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 12
- testRunner.When("je demande les informations d\'un rôle au maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.Given("moi un habitant novice du village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 13
+ testRunner.When("je demande les informations d\'un rôle au maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 14
  testRunner.Then("le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line hidden
             this.ScenarioCleanup();
