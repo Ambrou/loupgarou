@@ -80,6 +80,15 @@ namespace LoupGarou.Core.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Chaque nuit, ils dévorent un villeagois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire. En aucun cas un Loup-Garou peut dévorer un Loup-Garou..
+        /// </summary>
+        public static string DescriptionRoleLoupGarou {
+            get {
+                return ResourceManager.GetString("DescriptionRoleLoupGarou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à La petite fille peut, en entrouvant les yeux, espionner les Loups-Garous pendant leur réviel. Si elle se fait surprendre par un des Loups-Garous, elle pourra être dévorée immédiatement (en silence), à la place de la victime désignée. La petite fille ne peut espionner que la nuit, durant le tour d&apos;éveil des Loups-Garous. Elle n&apos;a pas le droit de se faire passer pour un Loup-Garou et d&apos;ouvrir grand les yeux..
         /// </summary>
         public static string DescriptionrolePetiteFille {
@@ -130,6 +139,15 @@ namespace LoupGarou.Core.Properties {
         public static string NomRoleCupidon {
             get {
                 return ResourceManager.GetString("NomRoleCupidon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à loup-garou.
+        /// </summary>
+        public static string NomRoleLoupGarou {
+            get {
+                return ResourceManager.GetString("NomRoleLoupGarou", resourceCulture);
             }
         }
         

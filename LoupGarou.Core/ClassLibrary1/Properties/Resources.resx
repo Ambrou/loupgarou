@@ -173,4 +173,12 @@
     <value>Bienvenue dans notre village</value>
     <comment>Salutation à l'habitant qui vient d'emmenager</comment>
   </data>
+  <data name="DescriptionRoleLoupGarou" xml:space="preserve">
+    <value>Chaque nuit, ils dévorent un villeagois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire. En aucun cas un Loup-Garou peut dévorer un Loup-Garou.</value>
+    <comment>Description du rôle de Loup Garou</comment>
+  </data>
+  <data name="NomRoleLoupGarou" xml:space="preserve">
+    <value>loup-garou</value>
+    <comment>Nom du rôle du loup-garou</comment>
+  </data>
 </root>

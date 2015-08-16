@@ -25,6 +25,76 @@
     <Role>petite fille</Role>
     <Description>La petite fille peut, en entrouvant les yeux, espionner les Loups-Garous pendant leur réviel. Si elle se fait surprendre par un des Loups-Garous, elle pourra être dévorée immédiatement (en silence), à la place de la victime désignée. La petite fille ne peut espionner que la nuit, durant le tour d'éveil des Loups-Garous. Elle n'a pas le droit de se faire passer pour un Loup-Garou et d'ouvrir grand les yeux.</Description>
   </Row>
+  <Row>
+    <Role>loup-garou</Role>
+    <Description>Chaque nuit, ils dévorent un villeagois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire. En aucun cas un Loup-Garou peut dévorer un Loup-Garou.</Description>
+  </Row>
+  <DistributionRole>
+    <NombreVillageois>5</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>2</NombreLoupGarou>
+    <NombreHabitant>8</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>6</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>2</NombreLoupGarou>
+    <NombreHabitant>9</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>7</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>2</NombreLoupGarou>
+    <NombreHabitant>10</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>8</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>2</NombreLoupGarou>
+    <NombreHabitant>11</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>8</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>12</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>9</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>13</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>10</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>14</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>11</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>15</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>12</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>16</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>13</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>17</NombreHabitant>
+  </DistributionRole>
+  <DistributionRole>
+    <NombreVillageois>14</NombreVillageois>
+    <NombreVoyante>1</NombreVoyante>
+    <NombreLoupGarou>3</NombreLoupGarou>
+    <NombreHabitant>18</NombreHabitant>
+  </DistributionRole>
 </Rows>
 
 

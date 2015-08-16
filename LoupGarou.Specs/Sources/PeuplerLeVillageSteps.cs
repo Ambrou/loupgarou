@@ -2,7 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace LoupGarou.Specs.Sources
 {
@@ -76,6 +78,45 @@ namespace LoupGarou.Specs.Sources
             var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
             mock.Verify(mj => mj.saluer(habitant, "Bienvenue dans notre village"));
         }
+
+        [Given(@"un village simplifiée")]
+        public void SoitUnVillageSimplifiee()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.estUnePartieSimplifie();
+        }
+
+        [Given(@"il est peuplé de ses habitants")]
+        public void SoitIlEstPeupleDeHabitants()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
+            for (int iLoop = 0; iLoop < 8; ++iLoop)
+            {
+                Habitant habitant = new Habitant(iLoop.ToString());
+                habitant.emmenage(jeuDuLoupGarou);
+            }
+        }
+
+        [When(@"le village est crée")]
+        public void QuandLeVillageEstCree()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.commencerPartie();
+        }
+
+        [Then(@"chaque habitant se retrouve avec un role")]
+        public void AlorsChaqueHabitantSeRetrouveAvecUnRole()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+
+            foreach(var habitant in jeuDuLoupGarou.listeDesHabitants)
+            {
+                Assert.AreNotEqual("", habitant.Role);
+                Assert.IsNotNull(habitant.Role);
+            }
+        }
+
 
 
     }

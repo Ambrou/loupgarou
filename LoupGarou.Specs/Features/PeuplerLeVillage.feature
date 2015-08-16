@@ -12,8 +12,7 @@ Scénario: Création du village
 	Soit 8 habitants sont attendus
 	Et Il y a déjà 7 habitants dans le village
 	Lorsque le 8em habitant arrive
-	#Alors le village est crée
-	Alors le maitre du jeu pose le decor
+	#Alors la chasse peut commencer
 
 @Village
 Scénario: Un habitant emménage dans le village
@@ -25,10 +24,7 @@ Scénario: Un habitant emménage dans le village
 @Village
 Scénario: Attribution des rôles aux habitants du village
 	Soit un village simplifiée
-	Et il est peuplé de 8 habitants
+	Et il est peuplé de ses habitants
 	Lorsque le village est crée
-	Alors il y a dans le village:
-	    | role       | quantité |
-	    | voyante    | 1        |
-	    | loup garou | 2        |
-	    | villageois | 5        |
+	Alors chaque habitant se retrouve avec un role
+	Et le maitre du jeu pose le decor

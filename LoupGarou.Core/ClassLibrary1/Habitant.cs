@@ -10,6 +10,7 @@ namespace LoupGarou.Core
     {
         private string nom;
         private JeuDuLoupGarou jeuDuLoupGarou;
+        public string Role;
 
         public Habitant(string nom)
         {
