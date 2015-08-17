@@ -97,6 +97,10 @@ this.FeatureBackground();
  testRunner.And("Il y a déjà 7 habitants dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 14
  testRunner.When("le 8em habitant arrive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+#line 15
+ testRunner.Then("le maitre du jeu indique que tous les habitants sont présents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 16
+ testRunner.And("le jeu peut commencer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -109,17 +113,17 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un habitant emménage dans le village", new string[] {
                         "Village"});
-#line 18
+#line 19
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 19
- testRunner.Given("le migrant Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 20
- testRunner.When("il emmenage dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsqu\'");
+ testRunner.Given("le migrant Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 21
- testRunner.Then("Ambroise est un habitant du village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+ testRunner.When("il emmenage dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsqu\'");
 #line 22
+ testRunner.Then("Ambroise est un habitant du village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 23
  testRunner.And("le maitre du jeu salut Ambroise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
@@ -133,19 +137,19 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attribution des rôles aux habitants du village", new string[] {
                         "Village"});
-#line 25
+#line 26
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 26
- testRunner.Given("un village simplifiée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 27
- testRunner.And("il est peuplé de ses habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+ testRunner.Given("un village simplifiée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 28
- testRunner.When("le village est crée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
+ testRunner.And("il est peuplé de ses habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 29
- testRunner.Then("chaque habitant se retrouve avec un role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+ testRunner.When("le village est crée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
 #line 30
+ testRunner.Then("chaque habitant se retrouve avec un role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 31
  testRunner.And("le maitre du jeu pose le decor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();

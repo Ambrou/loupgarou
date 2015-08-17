@@ -204,5 +204,14 @@ namespace LoupGarou.Core.Properties {
                 return ResourceManager.GetString("SalutationHabitant", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le village est complet nous allons pouvoir commencer.
+        /// </summary>
+        public static string VillageComplet {
+            get {
+                return ResourceManager.GetString("VillageComplet", resourceCulture);
+            }
+        }
     }
 }

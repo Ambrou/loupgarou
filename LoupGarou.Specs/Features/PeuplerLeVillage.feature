@@ -12,7 +12,8 @@ Scénario: Création du village
 	Soit 8 habitants sont attendus
 	Et Il y a déjà 7 habitants dans le village
 	Lorsque le 8em habitant arrive
-	#Alors la chasse peut commencer
+	Alors le maitre du jeu indique que tous les habitants sont présents
+	Et le jeu peut commencer
 
 @Village
 Scénario: Un habitant emménage dans le village

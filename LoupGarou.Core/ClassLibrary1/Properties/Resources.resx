@@ -181,4 +181,8 @@
     <value>loup-garou</value>
     <comment>Nom du rôle du loup-garou</comment>
   </data>
+  <data name="VillageComplet" xml:space="preserve">
+    <value>Le village est complet nous allons pouvoir commencer</value>
+    <comment>Information sur le fait que le village est complet</comment>
+  </data>
 </root>

@@ -13,13 +13,14 @@ namespace LoupGarou.Core
 
         public JeuDuLoupGarou()
         {
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleVoyante,     LoupGarou.Core.Properties.Resources.DescriptionRoleVoyante);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois,  LoupGarou.Core.Properties.Resources.DescriptionRoleVillageois);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleCupidon,     LoupGarou.Core.Properties.Resources.DescriptionRoleCupidon);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleSorciere,    LoupGarou.Core.Properties.Resources.DescriptionRoleSorciere);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRolePetiteFille, LoupGarou.Core.Properties.Resources.DescriptionrolePetiteFille);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleChasseur,    LoupGarou.Core.Properties.Resources.DescriptionRoleChasseur);
-            descriptionParRole.Add(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou,   LoupGarou.Core.Properties.Resources.DescriptionRoleLoupGarou);
+            descriptionParRole.Add(Properties.Resources.NomRoleVoyante,     Properties.Resources.DescriptionRoleVoyante);
+            descriptionParRole.Add(Properties.Resources.NomRoleVillageois,  Properties.Resources.DescriptionRoleVillageois);
+            descriptionParRole.Add(Properties.Resources.NomRoleCupidon,     Properties.Resources.DescriptionRoleCupidon);
+            descriptionParRole.Add(Properties.Resources.NomRoleSorciere,    Properties.Resources.DescriptionRoleSorciere);
+            descriptionParRole.Add(Properties.Resources.NomRolePetiteFille, Properties.Resources.DescriptionrolePetiteFille);
+            descriptionParRole.Add(Properties.Resources.NomRoleChasseur,    Properties.Resources.DescriptionRoleChasseur);
+            descriptionParRole.Add(Properties.Resources.NomRoleLoupGarou,   Properties.Resources.DescriptionRoleLoupGarou);
+            peutCommencer = false;
         }
 
         public void creerUnVillageAvecHabitants(int p0)
@@ -30,11 +31,11 @@ namespace LoupGarou.Core
         internal void ajouterJoueur(Habitant habitant)
         {
             listeDesHabitants.Add(habitant);
-            maitreDuJeu.saluer(habitant, LoupGarou.Core.Properties.Resources.SalutationHabitant);
-
-            if(nombreHabitantsAttendu == listeDesHabitants.Count)
+            maitreDuJeu.saluer(habitant, Properties.Resources.SalutationHabitant);
+            if(listeDesHabitants.Count == nombreHabitantsAttendu)
             {
-                //commencerPartie();
+                peutCommencer = true;
+                maitreDuJeu.conter(Properties.Resources.VillageComplet);
             }
         }
 
@@ -65,10 +66,11 @@ namespace LoupGarou.Core
             {
                 listeDesHabitants[i].Role = listeDesRoles[i];
             }
-            maitreDuJeu.conter(LoupGarou.Core.Properties.Resources.PresentationDuJeu);
+            maitreDuJeu.conter(Properties.Resources.PresentationDuJeu);
         }
 
         static Random _random = new Random();
+        public bool peutCommencer;
 
         private List<string> creerListeDesRoles()
         {
@@ -76,55 +78,55 @@ namespace LoupGarou.Core
             int nombreHabitants = listeDesHabitants.Count;
 
 
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVoyante);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
-            listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+            listeDesRoles.Add(Properties.Resources.NomRoleLoupGarou);
+            listeDesRoles.Add(Properties.Resources.NomRoleLoupGarou);
+            listeDesRoles.Add(Properties.Resources.NomRoleVoyante);
+            listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
+            listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
+            listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
+            listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
+            listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             
             if(8 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (9 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (10 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (12 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (13 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (14 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (15 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (16 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
             if (17 < nombreHabitants)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleVillageois);
+                listeDesRoles.Add(Properties.Resources.NomRoleVillageois);
             }
 
             if (nombreHabitants > 11)
             {
-                listeDesRoles.Add(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
+                listeDesRoles.Add(Properties.Resources.NomRoleLoupGarou);
             }
 
             int n = listeDesRoles.Count;

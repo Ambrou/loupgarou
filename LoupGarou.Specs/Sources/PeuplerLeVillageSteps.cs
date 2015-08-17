@@ -39,13 +39,22 @@ namespace LoupGarou.Specs.Sources
             habitant = new Habitant(p0.ToString());
             habitant.emmenage(jeuDuLoupGarou);
         }
-        
-        //[Then(@"le village est crée")]
-        //public void AlorsLeVillageEstCree()
-        //{
-        //    ScenarioContext.Current.Pending();
-        //}
-        
+
+        [Then(@"le maitre du jeu indique que tous les habitants sont présents")]
+        public void AlorsLeMaitreDuJeuIndiqueQueTousLesHabitantsSontPresents()
+        {
+            var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            mock.Verify(mj => mj.conter("Le village est complet nous allons pouvoir commencer"));
+        }
+
+        [Then(@"le jeu peut commencer")]
+        public void AlorsLeJeuPeutCommencer()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            Assert.AreEqual(true, jeuDuLoupGarou.peutCommencer);
+        }
+
+
         [Then(@"le maitre du jeu pose le decor")]
         public void AlorsLeMaitreDuJeuPoseLeDecor()
         {
