@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace LoupGarou.Core
 {
-    public interface MaitreDuJeu
+    public class MaitreDuJeu
     {
-        void conter(string texte);
-        void saluer(Habitant habitant, string salutation);
+        public virtual void conter(string texte)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void saluer(Habitant habitant, string salutation)
+        {
+            habitant.afficheInformation(salutation);
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace LoupGarou.Specs.Sources
     public class PeuplerLeVillageSteps
     {
         Habitant habitant;
+        Mock<Habitant> habitantAmbroise;
 
 
         [Given(@"(.*) habitants sont attendus")]
@@ -65,13 +66,14 @@ namespace LoupGarou.Specs.Sources
         [Given(@"le migrant (.*)")]
         public void SoitLeMigrantAmbroise(string p0)
         {
-            habitant = new Habitant(p0);
+            habitantAmbroise = new Mock<Habitant>(p0);
         }
 
         [When(@"il emmenage dans le village")]
         public void QuandAmbroiseEmmenageDansLeVillage()
         {
-            habitant.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            var jeu = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            habitantAmbroise.Object.emmenage(jeu);
         }
 
         [Then(@"(.*) est un habitant du village")]
@@ -84,8 +86,9 @@ namespace LoupGarou.Specs.Sources
         [Then(@"le maitre du jeu salut (.*)")]
         public void AlorsLeMaitreDuJeuSalutAmbroise(string p0)
         {
-            var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
-            mock.Verify(mj => mj.saluer(habitant, "Bienvenue dans notre village"));
+            //var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            //mock.Verify(mj => mj.saluer(habitant, "Bienvenue dans notre village"));
+            habitantAmbroise.Verify(habitant => habitant.afficheInformation(It.IsAny<string>()));
         }
 
         [Given(@"un village simplifiée")]

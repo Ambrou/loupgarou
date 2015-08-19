@@ -17,7 +17,7 @@ namespace LoupGarou.Specs.Sources
             {
             }
 
-            public override void afficheInformationRole(string v)
+            public override void afficheInformation(string v)
             {
                 descriptionRole = v;
             }

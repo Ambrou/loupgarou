@@ -19,7 +19,7 @@ namespace LoupGarou.Test
             {
             }
 
-            public override void afficheInformationRole(string v)
+            public override void afficheInformation(string v)
             {
                 description = v;
             }
@@ -121,7 +121,7 @@ namespace LoupGarou.Test
             jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
             for (int i = 0; i < int.Parse(TestContext.DataRow["NombreHabitant"].ToString()); i++)
             {
-                Habitant habitant = new Habitant("habitant");
+                Habitant habitant = new MonJoueur();
                 habitant.emmenage(jeuDuLoupGarou);
             }
             int nombreDeVoyante = 0;

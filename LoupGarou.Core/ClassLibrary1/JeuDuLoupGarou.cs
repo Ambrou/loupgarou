@@ -143,7 +143,7 @@ namespace LoupGarou.Core
 
         public void donneInformationRole(string nomDuRole, Habitant joueur)
         {
-            joueur.afficheInformationRole(descriptionParRole[nomDuRole]);
+            joueur.afficheInformation(descriptionParRole[nomDuRole]);
         }
 
         public void estUnePartieSimplifie()

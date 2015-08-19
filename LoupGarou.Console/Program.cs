@@ -13,6 +13,14 @@ namespace LoupGarou.Console
         {
             JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(new MaitreDuJeuConsole());
+            jeuDuLoupGarou.estUnePartieSimplifie();
+            jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
+
+            for (int i = 0; i < 8; i++)
+            {
+                Habitant habitant = new HabitantConsole(System.Console.ReadLine());
+                habitant.emmenage(jeuDuLoupGarou);
+            }
 
             jeuDuLoupGarou.commencerPartie();
         }

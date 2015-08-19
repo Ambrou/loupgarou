@@ -19,14 +19,5 @@ namespace LoupGarou.Console
             System.Console.ForegroundColor = color;
             System.Console.WriteLine(texte);
         }
-
-        public void saluer(Habitant habitant, string salutation)
-        {
-            //var color = System.Console.ForegroundColor;
-            //System.Console.ForegroundColor = ConsoleColor.DarkYellow;
-            //System.Console.WriteLine("Narrateur: ");
-            //System.Console.ForegroundColor = color;
-            //System.Console.WriteLine(texte);
-        }
     }
 }

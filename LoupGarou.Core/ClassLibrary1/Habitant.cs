@@ -30,9 +30,9 @@ namespace LoupGarou.Core
             }
         }
 
-        public virtual void afficheInformationRole(string v)
+        public virtual void afficheInformation(string v)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void emmenage(JeuDuLoupGarou jeuDuLoupGarou)
