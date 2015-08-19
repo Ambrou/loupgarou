@@ -78,8 +78,16 @@ namespace LoupGarou.Specs.Sources
         [Then(@"(.*) est un habitant du village")]
         public void AlorsAmbroiseEstUnHabitantDuVillage(string p0)
         {
+            bool joueurEstPresent = false;
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            Assert.AreEqual(true, jeuDuLoupGarou.contientLHabitant(p0));
+            foreach (var joueur in jeuDuLoupGarou.listeDesHabitants)
+            {
+                if (joueur.Nom == p0)
+                {
+                    joueurEstPresent = true;
+                }
+            }
+            Assert.AreEqual(true, joueurEstPresent);
         }
 
         [Then(@"le maitre du jeu salut (.*)")]

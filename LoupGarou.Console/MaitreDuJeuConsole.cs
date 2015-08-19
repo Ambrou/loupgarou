@@ -11,7 +11,7 @@ namespace LoupGarou.Console
 {
     class MaitreDuJeuConsole : MaitreDuJeu
     {
-        public void conter(string texte)
+        public override void conter(string texte)
         {
             var color = System.Console.ForegroundColor;
             System.Console.ForegroundColor = ConsoleColor.DarkYellow;

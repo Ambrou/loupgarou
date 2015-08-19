@@ -39,20 +39,6 @@ namespace LoupGarou.Core
             }
         }
 
-        public bool contientLHabitant(string nomDuJoueur)
-        {
-            bool joueurEstPresent = false;
-
-            foreach (var joueur in listeDesHabitants)
-            {
-                if(joueur.Nom == nomDuJoueur)
-                {
-                    joueurEstPresent = true;
-                }
-            }
-            return joueurEstPresent;
-        }
-
         public void avecCommeMaitreDuJeu(MaitreDuJeu maitreDuJeu)
         {
             this.maitreDuJeu = maitreDuJeu;
