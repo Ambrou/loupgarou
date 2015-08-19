@@ -11,8 +11,7 @@ namespace LoupGarou.Specs.Sources
     [Binding]
     public class PeuplerLeVillageSteps
     {
-        Habitant habitant;
-        Mock<Habitant> habitantAmbroise;
+        Mock<Habitant> habitant;
 
 
         [Given(@"(.*) habitants sont attendus")]
@@ -28,8 +27,8 @@ namespace LoupGarou.Specs.Sources
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             for (int iLoop = 0; iLoop < p0; ++iLoop)
             {
-                habitant = new Habitant(iLoop.ToString());
-                habitant.emmenage(jeuDuLoupGarou);
+                habitant = new Mock<Habitant>(iLoop.ToString());
+                habitant.Object.emmenage(jeuDuLoupGarou);
             }
         }
         
@@ -37,8 +36,8 @@ namespace LoupGarou.Specs.Sources
         public void QuandLeEmHabitantArrive(int p0)
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            habitant = new Habitant(p0.ToString());
-            habitant.emmenage(jeuDuLoupGarou);
+            habitant = new Mock<Habitant>(p0.ToString());
+            habitant.Object.emmenage(jeuDuLoupGarou);
         }
 
         [Then(@"le maitre du jeu indique que tous les habitants sont présents")]
@@ -66,14 +65,14 @@ namespace LoupGarou.Specs.Sources
         [Given(@"le migrant (.*)")]
         public void SoitLeMigrantAmbroise(string p0)
         {
-            habitantAmbroise = new Mock<Habitant>(p0);
+            habitant = new Mock<Habitant>(p0);
         }
 
         [When(@"il emmenage dans le village")]
         public void QuandAmbroiseEmmenageDansLeVillage()
         {
             var jeu = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            habitantAmbroise.Object.emmenage(jeu);
+            habitant.Object.emmenage(jeu);
         }
 
         [Then(@"(.*) est un habitant du village")]
@@ -86,9 +85,7 @@ namespace LoupGarou.Specs.Sources
         [Then(@"le maitre du jeu salut (.*)")]
         public void AlorsLeMaitreDuJeuSalutAmbroise(string p0)
         {
-            //var mock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
-            //mock.Verify(mj => mj.saluer(habitant, "Bienvenue dans notre village"));
-            habitantAmbroise.Verify(habitant => habitant.afficheInformation(It.IsAny<string>()));
+            habitant.Verify(habitant => habitant.afficheInformation(It.IsAny<string>()));
         }
 
         [Given(@"un village simplifiée")]
@@ -105,8 +102,8 @@ namespace LoupGarou.Specs.Sources
             jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
             for (int iLoop = 0; iLoop < 8; ++iLoop)
             {
-                Habitant habitant = new Habitant(iLoop.ToString());
-                habitant.emmenage(jeuDuLoupGarou);
+                habitant = new Mock<Habitant>(iLoop.ToString());
+                habitant.Object.emmenage(jeuDuLoupGarou);
             }
         }
 
@@ -128,8 +125,5 @@ namespace LoupGarou.Specs.Sources
                 Assert.IsNotNull(habitant.Role);
             }
         }
-
-
-
     }
 }

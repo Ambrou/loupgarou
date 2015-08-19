@@ -32,7 +32,7 @@ namespace LoupGarou.Core
 
         public virtual void afficheInformation(string v)
         {
-            
+            throw new NotImplementedException();
         }
 
         public void emmenage(JeuDuLoupGarou jeuDuLoupGarou)
