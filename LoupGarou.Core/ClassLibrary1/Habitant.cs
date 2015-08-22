@@ -45,5 +45,10 @@ namespace LoupGarou.Core
         {
             jeuDuLoupGarou.donneInformationRole(nomDuRole, this);
         }
+
+        public void cibleLeJoueur(string v)
+        {
+            jeuDuLoupGarou.habitantCible(v/*, this*/);
+        }
     }
 }

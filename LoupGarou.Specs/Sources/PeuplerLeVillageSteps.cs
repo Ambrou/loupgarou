@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -12,7 +13,7 @@ namespace LoupGarou.Specs.Sources
     public class PeuplerLeVillageSteps
     {
         Mock<Habitant> habitant;
-
+        List<Mock<Habitant>> listHabitant = new List<Mock<Habitant>>();
 
         [Given(@"(.*) habitants sont attendus")]
         public void SoitHabitantsSontAttendus(int p0)
@@ -96,8 +97,8 @@ namespace LoupGarou.Specs.Sources
             habitant.Verify(habitant => habitant.afficheInformation(It.IsAny<string>()));
         }
 
-        [Given(@"un village simplifiée")]
-        public void SoitUnVillageSimplifiee()
+        [Given(@"un village simplifié")]
+        public void SoitUnVillageSimplifie()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.estUnePartieSimplifie();
@@ -112,6 +113,9 @@ namespace LoupGarou.Specs.Sources
             {
                 habitant = new Mock<Habitant>(iLoop.ToString());
                 habitant.Object.emmenage(jeuDuLoupGarou);
+                listHabitant.Add(habitant);
+                habitant.Setup(h => h.afficheInformation(It.IsAny<string>()));
+                habitant.Setup(h => h.afficheInformation(It.IsRegex("Votre rôle est [voyante|villageois|loup\\-garou]+", RegexOptions.IgnoreCase)));
             }
         }
 
@@ -133,5 +137,16 @@ namespace LoupGarou.Specs.Sources
                 Assert.IsNotNull(habitant.Role);
             }
         }
+
+        [Then(@"chaque joueur est informé de son rôle")]
+        public void AlorsChaqueJoueurEstInformeDeSonRole()
+        {
+            foreach(var habitant in listHabitant)
+            {
+                habitant.Verify(h => h.afficheInformation(It.IsRegex("Votre rôle est [voyante|villageois|loup\\-garou]+", RegexOptions.IgnoreCase)));
+            }
+            
+        }
+
     }
 }

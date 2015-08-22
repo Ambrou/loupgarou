@@ -62,6 +62,33 @@ namespace LoupGarou.Core.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Votre rôle est .
+        /// </summary>
+        public static string AnnonceRoleDuJoueur {
+            get {
+                return ResourceManager.GetString("AnnonceRoleDuJoueur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le village se réveille..
+        /// </summary>
+        public static string DebutTourVillageois {
+            get {
+                return ResourceManager.GetString("DebutTourVillageois", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Et les habitants découvrent avec effroi le corps de {0}, un {1}, sans vie..
+        /// </summary>
+        public static string DecouverteDuCorps {
+            get {
+                return ResourceManager.GetString("DecouverteDuCorps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à S&apos;il se fait dévorer par les Loups-Garous ou éliminé malencontreusement par les villageois, le Chasseur doit répliquer avant de rendre l&apos;âme, en éliminant immédiatement n&apos;importe quel autre joueur de son choix. Cas particulier: Le chasseur est l&apos;amoureux d&apos;un joueur éliminé, avant de quitter la partie le chasseur doit immédiatement éliminer un autre joueur de son choix. cela peut entraîner une partie où il ne reste aucun joueur survivant. Dans ce cas la victoire n&apos;appartient à aucun des camps..
         /// </summary>
         public static string DescriptionRoleChasseur {
@@ -121,6 +148,15 @@ namespace LoupGarou.Core.Properties {
         public static string DescriptionRoleVoyante {
             get {
                 return ResourceManager.GetString("DescriptionRoleVoyante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les loups garous se rendorment..
+        /// </summary>
+        public static string FinTourLoupGarou {
+            get {
+                return ResourceManager.GetString("FinTourLoupGarou", resourceCulture);
             }
         }
         

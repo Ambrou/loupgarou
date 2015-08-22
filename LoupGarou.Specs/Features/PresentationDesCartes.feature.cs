@@ -80,12 +80,12 @@ namespace LoupGarou.Specs.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demande de la déscription d\'un role")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demande de la description d\'un role")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Presentation des cartes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Novice")]
         public virtual void DemandeDeLaDescriptionDUnRole()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demande de la déscription d\'un role", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demande de la description d\'un role", new string[] {
                         "Novice"});
 #line 11
 this.ScenarioSetup(scenarioInfo);

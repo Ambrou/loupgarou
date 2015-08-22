@@ -185,4 +185,20 @@
     <value>Le village est complet nous allons pouvoir commencer</value>
     <comment>Information sur le fait que le village est complet</comment>
   </data>
+  <data name="AnnonceRoleDuJoueur" xml:space="preserve">
+    <value>Votre rôle est </value>
+    <comment>Information sur le rôle du joueur</comment>
+  </data>
+  <data name="DebutTourVillageois" xml:space="preserve">
+    <value>Le village se réveille.</value>
+    <comment>Début du tour des villageois</comment>
+  </data>
+  <data name="DecouverteDuCorps" xml:space="preserve">
+    <value>Et les habitants découvrent avec effroi le corps de {0}, un {1}, sans vie.</value>
+    <comment>Les villageois découvre le corps de la victime</comment>
+  </data>
+  <data name="FinTourLoupGarou" xml:space="preserve">
+    <value>Les loups garous se rendorment.</value>
+    <comment>Fin du tour des loups garous</comment>
+  </data>
 </root>

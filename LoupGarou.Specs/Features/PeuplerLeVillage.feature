@@ -24,8 +24,9 @@ Scénario: Un habitant emménage dans le village
 
 @Village
 Scénario: Attribution des rôles aux habitants du village
-	Soit un village simplifiée
+	Soit un village simplifié
 	Et il est peuplé de ses habitants
 	Lorsque le village est crée
 	Alors chaque habitant se retrouve avec un role
 	Et le maitre du jeu pose le decor
+	Et chaque joueur est informé de son rôle

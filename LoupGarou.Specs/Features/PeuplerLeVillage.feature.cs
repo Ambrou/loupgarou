@@ -142,7 +142,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 27
- testRunner.Given("un village simplifiée", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+ testRunner.Given("un village simplifié", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 28
  testRunner.And("il est peuplé de ses habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 29
@@ -151,6 +151,8 @@ this.FeatureBackground();
  testRunner.Then("chaque habitant se retrouve avec un role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line 31
  testRunner.And("le maitre du jeu pose le decor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 32
+ testRunner.And("chaque joueur est informé de son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }

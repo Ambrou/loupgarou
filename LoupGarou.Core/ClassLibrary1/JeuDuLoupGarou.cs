@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LoupGarou.Core
 {
@@ -10,6 +11,9 @@ namespace LoupGarou.Core
         public List<Habitant> listeDesHabitants = new List<Habitant>();
         int nombreHabitantsAttendu = 0;
         bool partieSimplifie = false;
+        public string estAuTourDe;
+        private string joueurCible;
+        private int nombreDeJoueurAyantCible;
 
         public JeuDuLoupGarou()
         {
@@ -21,6 +25,28 @@ namespace LoupGarou.Core
             descriptionParRole.Add(Properties.Resources.NomRoleChasseur,    Properties.Resources.DescriptionRoleChasseur);
             descriptionParRole.Add(Properties.Resources.NomRoleLoupGarou,   Properties.Resources.DescriptionRoleLoupGarou);
             peutCommencer = false;
+        }
+
+        internal void habitantCible(string v/*, Habitant accusateur*/)
+        {
+            if(estAuTourDe == Properties.Resources.NomRoleLoupGarou)
+            {
+                joueurCible = v;
+                nombreDeJoueurAyantCible++;
+                if(nombreDeJoueurAyantCible == 2)
+                {
+                    estAuTourDe = Properties.Resources.NomRoleVillageois;
+                    maitreDuJeu.conter(Properties.Resources.FinTourLoupGarou);
+                    maitreDuJeu.conter(Properties.Resources.DebutTourVillageois);
+                    Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurCible);
+                    maitreDuJeu.conter(string.Format(Properties.Resources.DecouverteDuCorps, habitant.Nom, habitant.Role));
+                }
+            }
+        }
+
+        public void auTourDe(string v)
+        {
+            estAuTourDe = v;
         }
 
         public void creerUnVillageAvecHabitants(int p0)
@@ -51,6 +77,7 @@ namespace LoupGarou.Core
             for (int i = 0; i < listeDesHabitants.Count; i++)
             {
                 listeDesHabitants[i].Role = listeDesRoles[i];
+                listeDesHabitants[i].afficheInformation(Properties.Resources.AnnonceRoleDuJoueur + listeDesHabitants[i].Role);
             }
             maitreDuJeu.conter(Properties.Resources.PresentationDuJeu);
         }
