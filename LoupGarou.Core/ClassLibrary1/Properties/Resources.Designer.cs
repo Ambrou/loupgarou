@@ -161,6 +161,33 @@ namespace LoupGarou.Core.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le village se rendort..
+        /// </summary>
+        public static string FinTourVillageois {
+            get {
+                return ResourceManager.GetString("FinTourVillageois", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La voyante se rendort..
+        /// </summary>
+        public static string FinTourVoyante {
+            get {
+                return ResourceManager.GetString("FinTourVoyante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les villageois ont donc jugé {0} coupable, un {1}..
+        /// </summary>
+        public static string LynchageVillageois {
+            get {
+                return ResourceManager.GetString("LynchageVillageois", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à chasseur.
         /// </summary>
         public static string NomRoleChasseur {

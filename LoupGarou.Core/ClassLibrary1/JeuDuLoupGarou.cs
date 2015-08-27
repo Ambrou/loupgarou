@@ -35,12 +35,35 @@ namespace LoupGarou.Core
                 nombreDeJoueurAyantCible++;
                 if(nombreDeJoueurAyantCible == 2)
                 {
-                    estAuTourDe = Properties.Resources.NomRoleVillageois;
+                    auTourDe(Properties.Resources.NomRoleVillageois);
                     maitreDuJeu.conter(Properties.Resources.FinTourLoupGarou);
                     maitreDuJeu.conter(Properties.Resources.DebutTourVillageois);
                     Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurCible);
                     maitreDuJeu.conter(string.Format(Properties.Resources.DecouverteDuCorps, habitant.Nom, habitant.Role));
+                    listeDesHabitants.Remove(habitant);
                 }
+            }
+            else if (estAuTourDe == Properties.Resources.NomRoleVillageois)
+            {
+                joueurCible = v;
+                nombreDeJoueurAyantCible++;
+                if (nombreDeJoueurAyantCible == listeDesHabitants.Count)
+                {
+                    auTourDe(Properties.Resources.NomRoleVoyante);
+                    Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurCible);
+                    maitreDuJeu.conter(string.Format(Properties.Resources.LynchageVillageois, habitant.Nom, habitant.Role));
+                    maitreDuJeu.conter(Properties.Resources.FinTourVillageois);
+                    listeDesHabitants.Remove(habitant);
+                }
+            }
+            else if(estAuTourDe == Properties.Resources.NomRoleVoyante)
+            {
+                joueurCible = v;
+                Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurCible);
+                Habitant voyante = listeDesHabitants.Single(h => h.Role == Properties.Resources.NomRoleVoyante);
+                maitreDuJeu.chuchoter(voyante, habitant.Role);
+                maitreDuJeu.conter(Properties.Resources.FinTourVoyante);
+                auTourDe(Properties.Resources.NomRoleLoupGarou);
             }
         }
 
@@ -57,7 +80,7 @@ namespace LoupGarou.Core
         internal void ajouterJoueur(Habitant habitant)
         {
             listeDesHabitants.Add(habitant);
-            maitreDuJeu.saluer(habitant, Properties.Resources.SalutationHabitant);
+            maitreDuJeu.chuchoter(habitant, Properties.Resources.SalutationHabitant);
             if(listeDesHabitants.Count == nombreHabitantsAttendu)
             {
                 peutCommencer = true;

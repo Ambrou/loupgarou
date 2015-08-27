@@ -137,6 +137,70 @@ this.FeatureBackground();
  testRunner.And("il annonce le joueur mort ainsi que son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 42
  testRunner.And("c\'est le tour des villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 43
+ testRunner.And("le joueur mort ne fait plus parti des habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Les villageois désigne un coupable")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Tour de jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MaitreDuJeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Villageois")]
+        public virtual void LesVillageoisDesigneUnCoupable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Les villageois désigne un coupable", new string[] {
+                        "Jeu",
+                        "MaitreDuJeu",
+                        "Villageois"});
+#line 46
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 47
+ testRunner.Given("le tour des villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 48
+ testRunner.When("les villageois ont choisi à la majorité leur coupable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 49
+ testRunner.Then("le maitre du jeu annonce le joueur mort ainsi que son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 50
+ testRunner.And("il rendort le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 51
+ testRunner.And("c\'est le tour de la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 52
+ testRunner.And("le joueur mort ne fait plus parti des habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("La voyante utilise son pouvoir de divination")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Tour de jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MaitreDuJeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Voyante")]
+        public virtual void LaVoyanteUtiliseSonPouvoirDeDivination()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("La voyante utilise son pouvoir de divination", new string[] {
+                        "Jeu",
+                        "MaitreDuJeu",
+                        "Voyante"});
+#line 56
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 57
+ testRunner.Given("le tour de la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 58
+ testRunner.When("la voyante utilise son pouvoir sur un habitant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 59
+ testRunner.Then("le maitre du jeu l\'informe du rôle de l\'habitant dans le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 60
+ testRunner.And("il rendort la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 61
+ testRunner.And("c\'est le tour des loups garous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }

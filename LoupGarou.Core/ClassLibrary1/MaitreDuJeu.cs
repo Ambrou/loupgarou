@@ -13,9 +13,9 @@ namespace LoupGarou.Core
             throw new NotImplementedException();
         }
 
-        public void saluer(Habitant habitant, string salutation)
+        public void chuchoter(Habitant habitant, string chuchotage)
         {
-            habitant.afficheInformation(salutation);
+            habitant.afficheInformation(chuchotage);
         }
     }
 }

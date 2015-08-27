@@ -40,3 +40,23 @@ Scénario: Les loups garous mange une personne
 	Et le maitre du jeu réveille le village
 	Et il annonce le joueur mort ainsi que son rôle
 	Et c'est le tour des villageois
+	Et le joueur mort ne fait plus parti des habitants
+	
+@Jeu @MaitreDuJeu @Villageois
+Scénario: Les villageois désigne un coupable
+	Soit le tour des villageois
+	Quand les villageois ont choisi à la majorité leur coupable 
+	Alors le maitre du jeu annonce le joueur mort ainsi que son rôle
+	Et il rendort le village
+	Et c'est le tour de la voyante
+	Et le joueur mort ne fait plus parti des habitants
+
+	
+@Jeu @MaitreDuJeu @Voyante
+Scénario: La voyante utilise son pouvoir de divination
+	Soit le tour de la voyante
+	Quand la voyante utilise son pouvoir sur un habitant 
+	Alors le maitre du jeu l'informe du rôle de l'habitant dans le village
+	Et il rendort la voyante
+	Et c'est le tour des loups garous
+	

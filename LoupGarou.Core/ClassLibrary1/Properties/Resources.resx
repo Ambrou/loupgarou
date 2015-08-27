@@ -201,4 +201,16 @@
     <value>Les loups garous se rendorment.</value>
     <comment>Fin du tour des loups garous</comment>
   </data>
+  <data name="FinTourVillageois" xml:space="preserve">
+    <value>Le village se rendort.</value>
+    <comment>Fin du tour des villageois</comment>
+  </data>
+  <data name="LynchageVillageois" xml:space="preserve">
+    <value>Les villageois ont donc jugé {0} coupable, un {1}.</value>
+    <comment>Les Villageois ont jugé coupable une victime</comment>
+  </data>
+  <data name="FinTourVoyante" xml:space="preserve">
+    <value>La voyante se rendort.</value>
+    <comment>Fin du tour de la voyante</comment>
+  </data>
 </root>
