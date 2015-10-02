@@ -12,7 +12,7 @@ namespace LoupGarou.Core
         int nombreHabitantsAttendu = 0;
         bool partieSimplifie = false;
         public string estAuTourDe;
-        private string joueurCible;
+        private Dictionary<string, int> joueurCible = new Dictionary<string, int>();
         private int nombreDeJoueurAyantCible;
 
         public JeuDuLoupGarou()
@@ -29,11 +29,11 @@ namespace LoupGarou.Core
 
         internal void habitantCible(string v/*, Habitant accusateur*/)
         {
-            if(estAuTourDe == Properties.Resources.NomRoleLoupGarou)
+            nombreDeJoueurAyantCible++;
+            if (estAuTourDe == Properties.Resources.NomRoleLoupGarou)
             {
-                joueurCible = v;
-                nombreDeJoueurAyantCible++;
-                if(nombreDeJoueurAyantCible == 2)
+                joueurCible[v]++;
+                if (nombreDeJoueurAyantCible == nombreDeLoupGarou())
                 {
                     auTourDe(Properties.Resources.NomRoleVillageois);
                     maitreDuJeu.conter(Properties.Resources.FinTourLoupGarou);
@@ -45,8 +45,7 @@ namespace LoupGarou.Core
             }
             else if (estAuTourDe == Properties.Resources.NomRoleVillageois)
             {
-                joueurCible = v;
-                nombreDeJoueurAyantCible++;
+                joueurCible[v]++;
                 if (nombreDeJoueurAyantCible == listeDesHabitants.Count)
                 {
                     auTourDe(Properties.Resources.NomRoleVoyante);
@@ -58,8 +57,7 @@ namespace LoupGarou.Core
             }
             else if(estAuTourDe == Properties.Resources.NomRoleVoyante)
             {
-                joueurCible = v;
-                Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurCible);
+                Habitant habitant = listeDesHabitants.Single(h => h.Nom == v);
                 Habitant voyante = listeDesHabitants.Single(h => h.Role == Properties.Resources.NomRoleVoyante);
                 maitreDuJeu.chuchoter(voyante, habitant.Role);
                 maitreDuJeu.conter(Properties.Resources.FinTourVoyante);
@@ -67,9 +65,20 @@ namespace LoupGarou.Core
             }
         }
 
+        private int nombreDeLoupGarou()
+        {
+            return listeDesHabitants.Count(h => h.Role == Properties.Resources.NomRoleLoupGarou);
+        }
+
         public void auTourDe(string v)
         {
             estAuTourDe = v;
+            nombreDeJoueurAyantCible = 0;
+            joueurCible.Clear();
+            foreach(var h in listeDesHabitants)
+            {
+                joueurCible.Add(h.Nom, 0);
+            }
         }
 
         public void creerUnVillageAvecHabitants(int p0)

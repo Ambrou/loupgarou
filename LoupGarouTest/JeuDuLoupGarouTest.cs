@@ -15,7 +15,7 @@ namespace LoupGarou.Test
         {
             public string description;
 
-            public MonJoueur() : base ("JoueurLambda")
+            public MonJoueur() : base("JoueurLambda")
             {
             }
 
@@ -134,7 +134,7 @@ namespace LoupGarou.Test
             // Assert
             foreach (var habitant in jeuDuLoupGarou.listeDesHabitants)
             {
-                if(habitant.Role == LoupGarou.Core.Properties.Resources.NomRoleVoyante)
+                if (habitant.Role == LoupGarou.Core.Properties.Resources.NomRoleVoyante)
                 {
                     nombreDeVoyante++;
                 }
@@ -151,6 +151,130 @@ namespace LoupGarou.Test
             Assert.AreEqual(int.Parse(TestContext.DataRow["NombreVillageois"].ToString()), nombreDeVillageois);
             Assert.AreEqual(int.Parse(TestContext.DataRow["NombreLoupGarou"].ToString()), nombreDeLoup);
         }
-        
+
+        class MyHabitant : Habitant
+        {
+            public MyHabitant(string nomHabitant) : base(nomHabitant)
+            {
+            }
+
+            public override void afficheInformation(string v)
+            {
+
+            }
+        }
+
+        [TestMethod]
+        public void unHabitantEstLaCibleDeDeuxLoups()
+        {
+             
+            // Arrange
+            JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
+            var mock = new Mock<MaitreDuJeu>();
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
+            jeuDuLoupGarou.estUnePartieSimplifie();
+            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Habitant Hloup1 = new MyHabitant("loup1");
+            Habitant Hloup2 = new MyHabitant("loup2");
+            Habitant HVillageois1 = new MyHabitant("habitant1");
+            Habitant HVillageois2 = new MyHabitant("habitant2");
+            Hloup1.emmenage(jeuDuLoupGarou);
+            HVillageois1.emmenage(jeuDuLoupGarou);
+            HVillageois2.emmenage(jeuDuLoupGarou);
+            Hloup2.emmenage(jeuDuLoupGarou);
+            Hloup1.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Hloup2.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+
+            // Act
+            Hloup1.cibleLeJoueur("habitant2");
+            Hloup2.cibleLeJoueur("habitant2");
+
+            // Assert
+            Assert.AreEqual(3, jeuDuLoupGarou.listeDesHabitants.Count);
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup1));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup2));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois1));
+            Assert.AreEqual(false, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois2));
+
+        }
+
+        [TestMethod]
+        public void unHabitantEstLaCibleDeDeuxLoupsEtUnAutreDUnTroisiemeLoup()
+        {
+
+            // Arrange
+            JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
+            var mock = new Mock<MaitreDuJeu>();
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
+            jeuDuLoupGarou.estUnePartieSimplifie();
+            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Habitant Hloup1 = new MyHabitant("loup1");
+            Habitant Hloup2 = new MyHabitant("loup2");
+            Habitant Hloup3 = new MyHabitant("loup3");
+            Habitant HVillageois1 = new MyHabitant("habitant1");
+            Habitant HVillageois2 = new MyHabitant("habitant2");
+            Hloup1.emmenage(jeuDuLoupGarou);
+            HVillageois1.emmenage(jeuDuLoupGarou);
+            HVillageois2.emmenage(jeuDuLoupGarou);
+            Hloup2.emmenage(jeuDuLoupGarou);
+            Hloup3.emmenage(jeuDuLoupGarou);
+            Hloup1.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Hloup2.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Hloup3.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+
+            // Act
+            Hloup1.cibleLeJoueur("habitant2");
+            Hloup2.cibleLeJoueur("habitant1");
+            Hloup3.cibleLeJoueur("habitant2");
+
+            // Assert
+            Assert.AreEqual(4, jeuDuLoupGarou.listeDesHabitants.Count);
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup1));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup2));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup3));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois1));
+            Assert.AreEqual(false, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois2));
+
+        }
+
+        [TestMethod]
+        public void chaqueHabitantEstLaCibleDUnLoup()
+        {
+
+            // Arrange
+            JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
+            var mock = new Mock<MaitreDuJeu>();
+            jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
+            jeuDuLoupGarou.estUnePartieSimplifie();
+            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Habitant Hloup1 = new MyHabitant("loup1");
+            Habitant Hloup2 = new MyHabitant("loup2");
+            Habitant HVillageois1 = new MyHabitant("habitant1");
+            Habitant HVillageois2 = new MyHabitant("habitant2");
+            Hloup1.emmenage(jeuDuLoupGarou);
+            HVillageois1.emmenage(jeuDuLoupGarou);
+            HVillageois2.emmenage(jeuDuLoupGarou);
+            Hloup2.emmenage(jeuDuLoupGarou);
+            Hloup1.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            Hloup2.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
+            HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+
+            // Act
+            Hloup1.cibleLeJoueur("habitant2");
+            Hloup2.cibleLeJoueur("habitant1");
+
+            // Assert
+            Assert.AreEqual(4, jeuDuLoupGarou.listeDesHabitants.Count);
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup1));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(Hloup2));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois1));
+            Assert.AreEqual(true, jeuDuLoupGarou.listeDesHabitants.Contains(HVillageois2));
+
+        }
     }
 }
