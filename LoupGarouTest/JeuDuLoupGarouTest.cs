@@ -173,7 +173,6 @@ namespace LoupGarou.Test
             var mock = new Mock<MaitreDuJeu>();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
             jeuDuLoupGarou.estUnePartieSimplifie();
-            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             Habitant Hloup1 = new MyHabitant("loup1", jeuDuLoupGarou);
             Habitant Hloup2 = new MyHabitant("loup2", jeuDuLoupGarou);
             Habitant HVillageois1 = new MyHabitant("habitant1", jeuDuLoupGarou);
@@ -186,6 +185,7 @@ namespace LoupGarou.Test
             Hloup2.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
             HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            jeuDuLoupGarou.auTourDe(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
 
             // Act
             Hloup1.cibleLeJoueur("habitant2");
@@ -209,7 +209,6 @@ namespace LoupGarou.Test
             var mock = new Mock<MaitreDuJeu>();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
             jeuDuLoupGarou.estUnePartieSimplifie();
-            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             Habitant Hloup1 = new MyHabitant("loup1", jeuDuLoupGarou);
             Habitant Hloup2 = new MyHabitant("loup2", jeuDuLoupGarou);
             Habitant Hloup3 = new MyHabitant("loup3", jeuDuLoupGarou);
@@ -225,6 +224,7 @@ namespace LoupGarou.Test
             Hloup3.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
             HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            jeuDuLoupGarou.auTourDe(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
 
             // Act
             Hloup1.cibleLeJoueur("habitant2");
@@ -250,7 +250,6 @@ namespace LoupGarou.Test
             var mock = new Mock<MaitreDuJeu>();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(mock.Object);
             jeuDuLoupGarou.estUnePartieSimplifie();
-            jeuDuLoupGarou.estAuTourDe = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             Habitant Hloup1 = new MyHabitant("loup1", jeuDuLoupGarou);
             Habitant Hloup2 = new MyHabitant("loup2", jeuDuLoupGarou);
             Habitant HVillageois1 = new MyHabitant("habitant1", jeuDuLoupGarou);
@@ -263,6 +262,7 @@ namespace LoupGarou.Test
             Hloup2.Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
             HVillageois1.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
             HVillageois2.Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
+            jeuDuLoupGarou.auTourDe(LoupGarou.Core.Properties.Resources.NomRoleLoupGarou);
 
             // Act
             Hloup1.cibleLeJoueur("habitant2");
