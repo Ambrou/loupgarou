@@ -25,20 +25,18 @@ namespace LoupGarou.Specs.Sources
         [Given(@"Il y a déjà (.*) habitants dans le village")]
         public void SoitIlYADejaHabitantsDansLeVillage(int p0)
         {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             for (int iLoop = 0; iLoop < p0; ++iLoop)
             {
-                habitant = new Mock<Habitant>(iLoop.ToString());
-                habitant.Object.emmenage(jeuDuLoupGarou);
+                habitant = new Mock<Habitant>(iLoop.ToString(), ScenarioContext.Current.Get<JeuDuLoupGarou>());
+                habitant.Object.emmenage();
             }
         }
         
         [When(@"le (.*)em habitant arrive")]
         public void QuandLeEmHabitantArrive(int p0)
         {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            habitant = new Mock<Habitant>(p0.ToString());
-            habitant.Object.emmenage(jeuDuLoupGarou);
+            habitant = new Mock<Habitant>(p0.ToString(), ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            habitant.Object.emmenage();
         }
 
         [Then(@"le maitre du jeu indique que tous les habitants sont présents")]
@@ -64,16 +62,15 @@ namespace LoupGarou.Specs.Sources
         }
 
         [Given(@"le migrant (.*)")]
-        public void SoitLeMigrantAmbroise(string p0)
+        public void SoitLeMigrant(string p0)
         {
-            habitant = new Mock<Habitant>(p0);
+            habitant = new Mock<Habitant>(p0, ScenarioContext.Current.Get<JeuDuLoupGarou>());
         }
 
         [When(@"il emmenage dans le village")]
         public void QuandAmbroiseEmmenageDansLeVillage()
         {
-            var jeu = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            habitant.Object.emmenage(jeu);
+            habitant.Object.emmenage();
         }
 
         [Then(@"(.*) est un habitant du village")]
@@ -111,8 +108,8 @@ namespace LoupGarou.Specs.Sources
             jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
             for (int iLoop = 0; iLoop < 8; ++iLoop)
             {
-                habitant = new Mock<Habitant>(iLoop.ToString());
-                habitant.Object.emmenage(jeuDuLoupGarou);
+                habitant = new Mock<Habitant>(iLoop.ToString(), jeuDuLoupGarou);
+                habitant.Object.emmenage();
                 listHabitant.Add(habitant);
                 habitant.Setup(h => h.afficheInformation(It.IsAny<string>()));
                 habitant.Setup(h => h.afficheInformation(It.IsRegex("Votre rôle est [voyante|villageois|loup\\-garou]+", RegexOptions.IgnoreCase)));

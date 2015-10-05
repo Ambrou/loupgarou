@@ -12,8 +12,9 @@ namespace LoupGarou.Core
         private JeuDuLoupGarou jeuDuLoupGarou;
         public string Role;
 
-        public Habitant(string nom)
+        public Habitant(string nom, JeuDuLoupGarou jeuDuLoupGarou)
         {
+            this.jeuDuLoupGarou = jeuDuLoupGarou;
             this.nom = nom;
         }
 
@@ -35,9 +36,8 @@ namespace LoupGarou.Core
             throw new NotImplementedException();
         }
 
-        public void emmenage(JeuDuLoupGarou jeuDuLoupGarou)
+        public void emmenage()
         {
-            this.jeuDuLoupGarou = jeuDuLoupGarou;
             this.jeuDuLoupGarou.ajouterJoueur(this);
         }
 

@@ -18,8 +18,8 @@ namespace LoupGarou.Console
 
             for (int i = 0; i < 8; i++)
             {
-                Habitant habitant = new HabitantConsole(System.Console.ReadLine());
-                habitant.emmenage(jeuDuLoupGarou);
+                Habitant habitant = new HabitantConsole(System.Console.ReadLine(), jeuDuLoupGarou);
+                habitant.emmenage();
             }
 
             jeuDuLoupGarou.commencerPartie();

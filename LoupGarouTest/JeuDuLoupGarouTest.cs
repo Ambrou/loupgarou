@@ -15,7 +15,7 @@ namespace LoupGarou.Test
         {
             public string description;
 
-            public MonJoueur() : base ("JoueurLambda")
+            public MonJoueur(JeuDuLoupGarou jeuDuLoupGarou) : base ("JoueurLambda", jeuDuLoupGarou)
             {
             }
 
@@ -81,7 +81,7 @@ namespace LoupGarou.Test
         {
             // Arrange
             JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
-            MonJoueur joueur = new MonJoueur();
+            MonJoueur joueur = new MonJoueur(jeuDuLoupGarou);
 
             // Act
             jeuDuLoupGarou.donneInformationRole(TestContext.DataRow["Role"].ToString(), joueur);
@@ -121,8 +121,8 @@ namespace LoupGarou.Test
             jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
             for (int i = 0; i < int.Parse(TestContext.DataRow["NombreHabitant"].ToString()); i++)
             {
-                Habitant habitant = new MonJoueur();
-                habitant.emmenage(jeuDuLoupGarou);
+                Habitant habitant = new MonJoueur(jeuDuLoupGarou);
+                habitant.emmenage();
             }
             int nombreDeVoyante = 0;
             int nombreDeVillageois = 0;
@@ -151,6 +151,44 @@ namespace LoupGarou.Test
             Assert.AreEqual(int.Parse(TestContext.DataRow["NombreVillageois"].ToString()), nombreDeVillageois);
             Assert.AreEqual(int.Parse(TestContext.DataRow["NombreLoupGarou"].ToString()), nombreDeLoup);
         }
-        
+
+        [TestMethod]
+        public void lesDeuxLoupGarouCiblentLaMemePersonne()
+        {
+            // Arrange
+            JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
+            for (int i = 0; i < 4; i++)
+            {
+                Habitant habitant = new Habitant(i.ToString(), jeuDuLoupGarou);
+            }
+
+            // Act
+
+            // Assert
+        }
+
+
+        [TestMethod]
+        public void lesDeuxLoupGarouCiblentUnePersonneDifferente()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+        }
+
+
+        [TestMethod]
+        public void deuxLoupGarouCiblentLaMemePersonneEtLeTroisiemeUnePersonneDifferente()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+        }
+
+
     }
 }

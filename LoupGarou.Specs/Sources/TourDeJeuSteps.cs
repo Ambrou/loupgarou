@@ -18,12 +18,11 @@ namespace LoupGarou.Specs.Sources
         [Given(@"les habitants suivants:")]
         public void SoitLesHabitantsSuivants(Table table)
         {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             foreach (var row in table.Rows)
             {
-                habitant = new Mock<Habitant>(row["habitant"]);
+                habitant = new Mock<Habitant>(row["habitant"], ScenarioContext.Current.Get<JeuDuLoupGarou>());
                 habitant.Object.Role = row["role"];
-                habitant.Object.emmenage(jeuDuLoupGarou);
+                habitant.Object.emmenage();
                 listHabitant.Add(habitant);
             }
         }

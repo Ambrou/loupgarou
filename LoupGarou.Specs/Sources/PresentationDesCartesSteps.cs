@@ -13,7 +13,7 @@ namespace LoupGarou.Specs.Sources
         {
             public string descriptionRole;
 
-            public HabitantNovice() : base("Novice")
+            public HabitantNovice(JeuDuLoupGarou jeuDuLoupGarou) : base("Novice", jeuDuLoupGarou)
             {
             }
 
@@ -34,8 +34,8 @@ namespace LoupGarou.Specs.Sources
         [Given(@"moi un habitant novice du village")]
         public void SoitMoiUnHabitantNoviceDuVillage()
         {
-            habitantNovice = new HabitantNovice();
-            habitantNovice.emmenage(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            habitantNovice = new HabitantNovice(ScenarioContext.Current.Get<JeuDuLoupGarou>());
+            habitantNovice.emmenage();
         }
 
         [When(@"je demande les informations d'un rôle au maitre du jeu")]
