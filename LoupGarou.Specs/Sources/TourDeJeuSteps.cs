@@ -219,6 +219,26 @@ namespace LoupGarou.Specs.Sources
             maitreDuJeuMock.Verify(mj => mj.conter("Les loups garous ont gagné. Bravo !"));
         }
 
+        [When(@"le tour de la voyante commence")]
+        public void QuandLeTourDeLaVoyanteCommence()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.auTourDe("voyante");
+        }
+
+        [Then(@"le maitre du jeu reveille la voyante")]
+        public void AlorsLeMaitreDuJeuReveilleLaVoyante()
+        {
+            var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            maitreDuJeuMock.Verify(mj => mj.conter("La voyante se réveille et va utiliser son pouvoir sur une personne"));
+        }
+
+        [Then(@"la voyante peut cibler un joueur")]
+        public void AlorsLaVoyantePeutCiblerUnJoueur()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }

@@ -206,6 +206,32 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Le maitre du jeu réveille la voyante")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Tour de jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Jeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MaitreDuJeu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Voyante")]
+        public virtual void LeMaitreDuJeuReveilleLaVoyante()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le maitre du jeu réveille la voyante", new string[] {
+                        "Jeu",
+                        "MaitreDuJeu",
+                        "Voyante"});
+#line 50
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 51
+ testRunner.When("le tour de la voyante commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 52
+ testRunner.Then("le maitre du jeu reveille la voyante", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 53
+ testRunner.And("la voyante peut cibler un joueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Victoire des villageois")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Tour de jeu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Jeu")]
@@ -217,19 +243,19 @@ this.FeatureBackground();
                         "Jeu",
                         "MaitreDuJeu",
                         "Victoire"});
-#line 51
+#line 56
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 52
+#line 57
  testRunner.Given("le tour des villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 53
+#line 58
  testRunner.When("les villageois ont choisi à la majorité leur coupable le dernier loup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line 54
+#line 59
  testRunner.Then("le maitre du jeu annonce le joueur mort ainsi que son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
-#line 55
+#line 60
  testRunner.And("le joueur mort ne fait plus parti des habitants", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
-#line 56
+#line 61
  testRunner.And("les villageois ont gagné", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
@@ -247,21 +273,21 @@ this.FeatureBackground();
                         "Jeu",
                         "MaitreDuJeu",
                         "Victoire"});
-#line 59
+#line 64
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 60
- testRunner.Given("le tour des loups garous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 61
- testRunner.When("les loups garous ont choisit le dernier villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line 62
- testRunner.Then("le maitre du jeu rendort les loups garous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
-#line 63
- testRunner.And("le maitre du jeu réveille le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
-#line 64
- testRunner.And("il annonce le joueur mort ainsi que son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 65
+ testRunner.Given("le tour des loups garous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+#line 66
+ testRunner.When("les loups garous ont choisit le dernier villageois", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
+#line 67
+ testRunner.Then("le maitre du jeu rendort les loups garous", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+#line 68
+ testRunner.And("le maitre du jeu réveille le village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 69
+ testRunner.And("il annonce le joueur mort ainsi que son rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+#line 70
  testRunner.And("les loup garous ont gagné", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
