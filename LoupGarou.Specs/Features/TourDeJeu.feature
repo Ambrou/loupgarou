@@ -18,20 +18,6 @@ Contexte:
 	| huit     | villageois |
 
 
-#@Jeu @MaitreDuJeu @Voyante
-#Scénario: Réveil de la voyante
-#	Soit la voyante est encore vivante
-#	Quand la nuit tombe
-#	Alors le maitre du jeu réveille la voyante
-#	Et trois peut 
-
-#@Jeu @MaitreDuJeu @LoupGarou
-#Scénario: Réveil des loups garous
-#	Soit le tour de la voyante
-#	Quand la voyante a utilisé son pouvoir
-#	Alors le maitre du jeu rendors la voyante
-#	Et il réveille les loups garous
-
 @Jeu @MaitreDuJeu @LoupGarou
 Scénario: Les loups garous mange une personne
 	Soit le tour des loups garous
@@ -59,4 +45,21 @@ Scénario: La voyante utilise son pouvoir de divination
 	Alors le maitre du jeu l'informe du rôle de l'habitant dans le village
 	Et il rendort la voyante
 	Et c'est le tour des loups garous
+
 	
+@Jeu @MaitreDuJeu @Victoire
+Scénario: Victoire des villageois
+	Soit le tour des villageois
+	Quand les villageois ont choisi à la majorité leur coupable le dernier loup
+	Alors le maitre du jeu annonce le joueur mort ainsi que son rôle
+	Et le joueur mort ne fait plus parti des habitants
+	Et les villageois ont gagné
+		
+@Jeu @MaitreDuJeu @Victoire
+Scénario: Victoire des loups garous
+	Soit le tour des loups garous
+	Quand les loups garous ont choisit le dernier villageois
+	Alors le maitre du jeu rendort les loups garous
+	Et le maitre du jeu réveille le village
+	Et il annonce le joueur mort ainsi que son rôle
+	Et les loup garous ont gagné

@@ -213,4 +213,12 @@
     <value>La voyante se rendort.</value>
     <comment>Fin du tour de la voyante</comment>
   </data>
+  <data name="LesLoupsOntGagne" xml:space="preserve">
+    <value>Les loups garous ont gagné. Bravo !</value>
+    <comment>Les loups Garous ont gagné</comment>
+  </data>
+  <data name="LesVilleageoisOntGagne" xml:space="preserve">
+    <value>Les villageois ont gagné. Bravo !</value>
+    <comment>Les villageois ont gagné</comment>
+  </data>
 </root>

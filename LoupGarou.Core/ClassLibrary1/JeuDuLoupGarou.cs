@@ -43,6 +43,10 @@ namespace LoupGarou.Core
                         Habitant habitant = listeDesHabitants.Single(h => h.Nom == habitantElu);
                         maitreDuJeu.conter(string.Format(Properties.Resources.DecouverteDuCorps, habitant.Nom, habitant.Role));
                         listeDesHabitants.Remove(habitant);
+                        if(nombreVillageois() == 0)
+                        {
+                            maitreDuJeu.conter(Properties.Resources.LesLoupsOntGagne);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -53,6 +57,7 @@ namespace LoupGarou.Core
             }
             else if (estAuTourDe == Properties.Resources.NomRoleVillageois)
             {
+                joueurCible[v]++;
                 if (nombreDeJoueurAyantCible == listeDesHabitants.Count)
                 {
                     string habitantElu = quiEstElu();
@@ -61,6 +66,10 @@ namespace LoupGarou.Core
                     maitreDuJeu.conter(string.Format(Properties.Resources.LynchageVillageois, habitant.Nom, habitant.Role));
                     maitreDuJeu.conter(Properties.Resources.FinTourVillageois);
                     listeDesHabitants.Remove(habitant);
+                    if(nombreDeLoupGarou() == 0)
+                    {
+                        maitreDuJeu.conter(Properties.Resources.LesVilleageoisOntGagne);
+                    }
                 }
             }
             else if (estAuTourDe == Properties.Resources.NomRoleVoyante)
@@ -71,6 +80,11 @@ namespace LoupGarou.Core
                 maitreDuJeu.conter(Properties.Resources.FinTourVoyante);
                 auTourDe(Properties.Resources.NomRoleLoupGarou);
             }
+        }
+
+        private int nombreVillageois()
+        {
+            return listeDesHabitants.Count(h => h.Role == Properties.Resources.NomRoleVillageois) + listeDesHabitants.Count(h => h.Role == Properties.Resources.NomRoleVoyante);
         }
 
         private string quiEstElu()

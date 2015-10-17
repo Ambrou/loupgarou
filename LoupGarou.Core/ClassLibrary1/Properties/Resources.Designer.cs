@@ -179,6 +179,24 @@ namespace LoupGarou.Core.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les loups garous ont gagné. Bravo !.
+        /// </summary>
+        public static string LesLoupsOntGagne {
+            get {
+                return ResourceManager.GetString("LesLoupsOntGagne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Les villageois ont gagné. Bravo !.
+        /// </summary>
+        public static string LesVilleageoisOntGagne {
+            get {
+                return ResourceManager.GetString("LesVilleageoisOntGagne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Les villageois ont donc jugé {0} coupable, un {1}..
         /// </summary>
         public static string LynchageVillageois {
