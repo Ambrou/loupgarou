@@ -48,7 +48,7 @@ namespace LoupGarou.Core
                             maitreDuJeu.conter(Properties.Resources.LesLoupsOntGagne);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
 
                     }
