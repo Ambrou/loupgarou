@@ -31,8 +31,8 @@ namespace LoupGarou.Specs.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Introduction", "Dans le but de poser l\'ambiance\nEn tant que maître du jeu\nJe veux présenter le vi" +
-                    "llage", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Introduction", "Dans le but de poser l\'ambiance\r\nEn tant que maître du jeu\r\nJe veux présenter le " +
+                    "village", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -67,37 +67,6 @@ namespace LoupGarou.Specs.Features
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
-        }
-        
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
- testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Démarrage de la partie")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Introduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MaitreDuJeu")]
-        public virtual void DemarrageDeLaPartie()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Démarrage de la partie", new string[] {
-                        "MaitreDuJeu"});
-#line 10
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 11
- testRunner.Given("un maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 12
- testRunner.When("la partie commence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
-#line 13
- testRunner.Then("le maitre du jeu commence la présentation du village aux villageois et de son his" +
-                    "toire", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
-#line hidden
-            this.ScenarioCleanup();
         }
     }
 }
