@@ -221,4 +221,8 @@
     <value>Les villageois ont gagné. Bravo !</value>
     <comment>Les villageois ont gagné</comment>
   </data>
+  <data name="DebutTourVoyante" xml:space="preserve">
+    <value>La voyante se réveille et va utiliser son pouvoir sur une personne</value>
+    <comment>Le maitre du jeu réveil la voyante</comment>
+  </data>
 </root>

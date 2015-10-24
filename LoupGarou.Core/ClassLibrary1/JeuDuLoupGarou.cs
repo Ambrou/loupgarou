@@ -111,6 +111,10 @@ namespace LoupGarou.Core
             {
                 joueurCible.Add(h.Nom, 0);
             }
+            if(v == Properties.Resources.NomRoleVoyante)
+            {
+                maitreDuJeu.conter(Properties.Resources.DebutTourVoyante);
+            }
         }
 
         public void creerUnVillageAvecHabitants(int p0)

@@ -80,6 +80,15 @@ namespace LoupGarou.Core.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La voyante se réveille et va utiliser son pouvoir sur une personne.
+        /// </summary>
+        public static string DebutTourVoyante {
+            get {
+                return ResourceManager.GetString("DebutTourVoyante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Et les habitants découvrent avec effroi le corps de {0}, un {1}, sans vie..
         /// </summary>
         public static string DecouverteDuCorps {

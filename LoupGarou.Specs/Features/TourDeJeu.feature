@@ -37,7 +37,6 @@ Scénario: Les villageois désigne un coupable
 	Et c'est le tour de la voyante
 	Et le joueur mort ne fait plus parti des habitants
 
-	
 @Jeu @MaitreDuJeu @Voyante
 Scénario: La voyante utilise son pouvoir de divination
 	Soit le tour de la voyante
@@ -45,12 +44,6 @@ Scénario: La voyante utilise son pouvoir de divination
 	Alors le maitre du jeu l'informe du rôle de l'habitant dans le village
 	Et il rendort la voyante
 	Et c'est le tour des loups garous
-	
-@Jeu @MaitreDuJeu @Voyante
-Scénario: Le maitre du jeu réveille la voyante
-	Quand le tour de la voyante commence
-	Alors le maitre du jeu reveille la voyante
-	Et la voyante peut cibler un joueur
 	
 @Jeu @MaitreDuJeu @Victoire
 Scénario: Victoire des villageois
