@@ -12,9 +12,8 @@ namespace LoupGarou.Core
         private JeuDuLoupGarou jeuDuLoupGarou;
         public string Role;
 
-        public Habitant(string nom, JeuDuLoupGarou jeuDuLoupGarou)
+        public Habitant(string nom)
         {
-            this.jeuDuLoupGarou = jeuDuLoupGarou;
             this.nom = nom;
         }
 
@@ -36,19 +35,19 @@ namespace LoupGarou.Core
             throw new NotImplementedException();
         }
 
-        public void emmenage()
-        {
-            this.jeuDuLoupGarou.ajouterJoueur(this);
-        }
-
         public void demandeInformationRole(string nomDuRole)
         {
             jeuDuLoupGarou.donneInformationRole(nomDuRole, this);
         }
 
-        public void cibleLeJoueur(string v)
+        //public void cibleLeJoueur(string v)
+        //{
+        //    jeuDuLoupGarou.habitantCible(v/*, this*/);
+        //}
+
+        public virtual string cibleChoisie()
         {
-            jeuDuLoupGarou.habitantCible(v/*, this*/);
+            throw new NotImplementedException();
         }
     }
 }

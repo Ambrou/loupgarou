@@ -38,7 +38,7 @@ namespace LoupGarou.Specs
         public void QuandLaPartieCommence()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.commencerPartie();
+            jeuDuLoupGarou.jouerPartie();
         }
 
         [Then(@"le maitre du jeu commence la présentation du village aux villageois et de son histoire")]

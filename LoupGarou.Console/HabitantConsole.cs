@@ -9,7 +9,7 @@ namespace LoupGarou.Console
 {
     class HabitantConsole : Habitant
     {
-        public HabitantConsole(string nomHabitant, JeuDuLoupGarou jeuDuLoupGarou) : base(nomHabitant, jeuDuLoupGarou)
+        public HabitantConsole(string nomHabitant) : base(nomHabitant)
         {
         }
 

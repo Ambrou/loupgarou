@@ -43,6 +43,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateurHabitant.cs" />
     <Compile Include="JeuDuLoupGarou.cs" />
     <Compile Include="Habitant.cs" />
     <Compile Include="MaitreDuJeu.cs" />

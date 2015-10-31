@@ -27,16 +27,15 @@ namespace LoupGarou.Specs.Sources
         {
             for (int iLoop = 0; iLoop < p0; ++iLoop)
             {
-                habitant = new Mock<Habitant>(iLoop.ToString(), ScenarioContext.Current.Get<JeuDuLoupGarou>());
-                habitant.Object.emmenage();
+                habitant = new Mock<Habitant>(iLoop.ToString());
+                ScenarioContext.Current.Get<JeuDuLoupGarou>().AjouterHabitant(habitant.Object);
             }
         }
         
         [When(@"le (.*)em habitant arrive")]
         public void QuandLeEmHabitantArrive(int p0)
         {
-            habitant = new Mock<Habitant>(p0.ToString(), ScenarioContext.Current.Get<JeuDuLoupGarou>());
-            habitant.Object.emmenage();
+            ScenarioContext.Current.Get<JeuDuLoupGarou>().AjouterHabitant(new Mock<Habitant>(p0.ToString()).Object);
         }
 
         [Then(@"le maitre du jeu indique que tous les habitants sont présents")]
@@ -70,7 +69,7 @@ namespace LoupGarou.Specs.Sources
         [When(@"il emmenage dans le village")]
         public void QuandAmbroiseEmmenageDansLeVillage()
         {
-            habitant.Object.emmenage();
+            ScenarioContext.Current.Get<JeuDuLoupGarou>().AjouterHabitant(habitant.Object);
         }
 
         [Then(@"(.*) est un habitant du village")]
@@ -109,7 +108,7 @@ namespace LoupGarou.Specs.Sources
             for (int iLoop = 0; iLoop < 8; ++iLoop)
             {
                 habitant = new Mock<Habitant>(iLoop.ToString(), jeuDuLoupGarou);
-                habitant.Object.emmenage();
+                ScenarioContext.Current.Get<JeuDuLoupGarou>().AjouterHabitant(habitant.Object);
                 listHabitant.Add(habitant);
                 habitant.Setup(h => h.afficheInformation(It.IsAny<string>()));
                 habitant.Setup(h => h.afficheInformation(It.IsRegex("Votre rôle est [voyante|villageois|loup\\-garou]+", RegexOptions.IgnoreCase)));
@@ -120,7 +119,7 @@ namespace LoupGarou.Specs.Sources
         public void QuandLeVillageEstCree()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.commencerPartie();
+            jeuDuLoupGarou.jouerPartie();
         }
 
         [Then(@"chaque habitant se retrouve avec un role")]

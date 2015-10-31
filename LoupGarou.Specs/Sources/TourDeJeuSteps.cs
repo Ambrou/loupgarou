@@ -20,12 +20,28 @@ namespace LoupGarou.Specs.Sources
         {
             foreach (var row in table.Rows)
             {
-                habitant = new Mock<Habitant>(row["habitant"], ScenarioContext.Current.Get<JeuDuLoupGarou>());
+                habitant = new Mock<Habitant>(row["habitant"]);
                 habitant.Object.Role = row["role"];
-                habitant.Object.emmenage();
                 listHabitant.Add(habitant);
+                //ScenarioContext.Current.Get<JeuDuLoupGarou>().listeDesHabitants.Add(habitant)
+                var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+                jeuDuLoupGarou.AjouterHabitant(habitant.Object);
             }
         }
+
+        [Given(@"il reste comme joueurs:")]
+        public void SoitIlResteCommeJoueurs(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                habitant = new Mock<Habitant>(row["habitant"]);
+                habitant.Object.Role = row["role"];
+                listHabitant.Add(habitant);
+                var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+                jeuDuLoupGarou.AjouterHabitant(habitant.Object);
+            }
+        }
+
 
         [Given(@"le tour des loups garous")]
         public void SoitLeTourDesLoupsGarous()
@@ -39,8 +55,8 @@ namespace LoupGarou.Specs.Sources
         public void QuandLesLoupsGarousOntChoisitLeurVictime()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("huit");
-            jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("huit");
+            //jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("huit");
+            //jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("huit");
             JoueurMort = "huit";
         }
 
@@ -84,14 +100,14 @@ namespace LoupGarou.Specs.Sources
         public void QuandLesVillageoisOntChoisiALaMajoriteLeurCoupable()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.listeDesHabitants[0].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[1].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[4].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[6].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[7].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[0].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[1].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[4].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[6].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[7].cibleLeJoueur("quatre");
             JoueurMort = "quatre";
         }
 
@@ -143,8 +159,9 @@ namespace LoupGarou.Specs.Sources
         [When(@"la voyante utilise son pouvoir sur un habitant")]
         public void QuandLaVoyanteUtiliseSonPouvoirSurUnHabitant()
         {
+            listHabitant[2].Setup(h => h.cibleChoisie()).Returns("quatre");
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("six");
+            jeuDuLoupGarou.activerRole(jeuDuLoupGarou.estAuTourDe);
         }
 
         [Then(@"le maitre du jeu l'informe du rôle de l'habitant dans le village")]
@@ -153,19 +170,19 @@ namespace LoupGarou.Specs.Sources
             listHabitant[2].Verify(h => h.afficheInformation("loup-garou"));
         }
 
-        [Then(@"il rendort la voyante")]
-        public void AlorsIlRendortLaVoyante()
-        {
-            var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
-            maitreDuJeuMock.Verify(mj => mj.conter("La voyante se rendort."));
-        }
+        //[Then(@"il rendort la voyante")]
+        //public void AlorsIlRendortLaVoyante()
+        //{
+        //    var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+        //    maitreDuJeuMock.Verify(mj => mj.conter("La voyante se rendort."));
+        //}
 
-        [Then(@"c'est le tour des loups garous")]
-        public void AlorsCEstLeTourDesLoupsGarous()
-        {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            Assert.AreEqual("loup-garou", jeuDuLoupGarou.estAuTourDe);
-        }
+        //[Then(@"c'est le tour des loups garous")]
+        //public void AlorsCEstLeTourDesLoupsGarous()
+        //{
+        //    var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+        //    Assert.AreEqual("loup-garou", jeuDuLoupGarou.estAuTourDe);
+        //}
 
         [When(@"les villageois ont choisi à la majorité leur coupable le dernier loup")]
         public void QuandLesVillageoisOntChoisiALaMajoriteLeurCoupableLeDernierLoup()
@@ -173,14 +190,14 @@ namespace LoupGarou.Specs.Sources
             JoueurMort = "quatre";
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.listeDesHabitants[5].Role = LoupGarou.Core.Properties.Resources.NomRoleVillageois;
-            jeuDuLoupGarou.listeDesHabitants[0].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[1].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[4].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[6].cibleLeJoueur("quatre");
-            jeuDuLoupGarou.listeDesHabitants[7].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[0].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[1].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[4].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[6].cibleLeJoueur("quatre");
+            //jeuDuLoupGarou.listeDesHabitants[7].cibleLeJoueur("quatre");
         }
 
         [Then(@"les villageois ont gagné")]
@@ -193,22 +210,10 @@ namespace LoupGarou.Specs.Sources
         [When(@"les loups garous ont choisit le dernier villageois")]
         public void QuandLesLoupsGarousOntChoisitLeDernierVillageois()
         {
-            JoueurMort = "un";
+            JoueurMort = "cinq";
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.listeDesHabitants[1].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[2].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[3].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[4].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[5].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[6].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[7].Role = LoupGarou.Core.Properties.Resources.NomRoleLoupGarou;
-            jeuDuLoupGarou.listeDesHabitants[1].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[3].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[4].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[5].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[6].cibleLeJoueur("un");
-            jeuDuLoupGarou.listeDesHabitants[7].cibleLeJoueur("un");
+            //jeuDuLoupGarou.listeDesHabitants[0].cibleLeJoueur("cinq");
+            //jeuDuLoupGarou.listeDesHabitants[2].cibleLeJoueur("cinq");
             
         }
 
@@ -218,6 +223,64 @@ namespace LoupGarou.Specs.Sources
             var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
             maitreDuJeuMock.Verify(mj => mj.conter("Les loups garous ont gagné. Bravo !"));
         }
-        
+
+        [Given(@"une partie en cours")]
+        public void SoitUnePartieEnCours()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.PartieEnCours = true;
+        }
+
+        [When(@"un rôle devient actif")]
+        public void QuandUnRoleDevientActif()
+        {
+            habitant = new Mock<Habitant>("Voyante");
+            habitant.Object.Role = "voyante";
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.AjouterHabitant(habitant.Object);
+            jeuDuLoupGarou.activerRole("voyante");
+        }
+
+        [Then(@"je reveille les joueurs correspondant au rôle")]
+        public void AlorsJeReveilleLesJoueursCorrespondantAuRole()
+        {
+            var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            maitreDuJeuMock.Verify(mj => mj.conter(It.IsAny<string>()));
+        }
+
+        [Then(@"j'attends que les joueurs aient ciblé un autre joueur")]
+        public void AlorsJAttendsQueLesJoueursAientCibleUnAutreJoueur()
+        {
+            habitant.Verify(h => h.cibleChoisie(), Times.AtMostOnce());
+        }
+
+        [When(@"tous les joueurs du rôle en cours ont désigné un autre joueur")]
+        public void QuandTousLesJoueursDuRoleEnCoursOntDesigneUnAutreJoueur()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            jeuDuLoupGarou.activerRole("voyante");
+        }
+
+        [Then(@"je rendors les joueurs correspondant au rôle")]
+        public void AlorsJeRendorsLesJoueursCorrespondantAuRole()
+        {
+            var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
+            maitreDuJeuMock.Verify(mj => mj.conter(It.IsAny<string>()));
+        }
+
+        [Then(@"j'active le rôle suivant")]
+        public void AlorsJActiveLeRoleSuivant()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            Assert.AreNotEqual("voyante", jeuDuLoupGarou.estAuTourDe);
+        }
+
+        [Then(@"le jeu est fini")]
+        public void AlorsLeJeuEstFini()
+        {
+            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+            Assert.AreEqual(false, jeuDuLoupGarou.PartieEnCours);
+        }
+
     }
 }

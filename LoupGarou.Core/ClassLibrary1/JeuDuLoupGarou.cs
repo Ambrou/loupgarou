@@ -13,7 +13,17 @@ namespace LoupGarou.Core
         bool partieSimplifie = false;
         public string estAuTourDe;
         private Dictionary<string, int> joueurCible = new Dictionary<string, int>();
+
+        public void attendreHabitants(CreateurHabitant createurHabitant)
+        {
+            for (int i = 0; i < nombreHabitantsAttendu; i++)
+            {
+                AjouterHabitant(createurHabitant.creerHabitant());
+            }
+        }
+
         private int nombreDeJoueurAyantCible;
+        private bool partieEnCours;
 
         public JeuDuLoupGarou()
         {
@@ -27,12 +37,23 @@ namespace LoupGarou.Core
             peutCommencer = false;
         }
 
+        public void AjouterHabitant(Habitant habitant)
+        {
+            listeDesHabitants.Add(habitant);
+            maitreDuJeu.chuchoter(habitant, Properties.Resources.SalutationHabitant);
+            if (listeDesHabitants.Count == nombreHabitantsAttendu)
+            {
+                peutCommencer = true;
+                maitreDuJeu.conter(Properties.Resources.VillageComplet);
+            }
+        }
+
         internal void habitantCible(string v/*, Habitant accusateur*/)
         {
             nombreDeJoueurAyantCible++;
+            joueurCible[v]++;
             if (estAuTourDe == Properties.Resources.NomRoleLoupGarou)
             {
-                joueurCible[v]++;
                 if (nombreDeJoueurAyantCible == nombreDeLoupGarou())
                 {
                     try
@@ -57,7 +78,6 @@ namespace LoupGarou.Core
             }
             else if (estAuTourDe == Properties.Resources.NomRoleVillageois)
             {
-                joueurCible[v]++;
                 if (nombreDeJoueurAyantCible == listeDesHabitants.Count)
                 {
                     string habitantElu = quiEstElu();
@@ -71,14 +91,6 @@ namespace LoupGarou.Core
                         maitreDuJeu.conter(Properties.Resources.LesVilleageoisOntGagne);
                     }
                 }
-            }
-            else if (estAuTourDe == Properties.Resources.NomRoleVoyante)
-            {
-                Habitant habitant = listeDesHabitants.Single(h => h.Nom == v);
-                Habitant voyante = listeDesHabitants.Single(h => h.Role == Properties.Resources.NomRoleVoyante);
-                maitreDuJeu.chuchoter(voyante, habitant.Role);
-                maitreDuJeu.conter(Properties.Resources.FinTourVoyante);
-                auTourDe(Properties.Resources.NomRoleLoupGarou);
             }
         }
 
@@ -105,16 +117,6 @@ namespace LoupGarou.Core
         public void auTourDe(string v)
         {
             estAuTourDe = v;
-            nombreDeJoueurAyantCible = 0;
-            joueurCible.Clear();
-            foreach (var h in listeDesHabitants)
-            {
-                joueurCible.Add(h.Nom, 0);
-            }
-            if(v == Properties.Resources.NomRoleVoyante)
-            {
-                maitreDuJeu.conter(Properties.Resources.DebutTourVoyante);
-            }
         }
 
         public void creerUnVillageAvecHabitants(int p0)
@@ -122,23 +124,21 @@ namespace LoupGarou.Core
             nombreHabitantsAttendu = p0;
         }
 
-        internal void ajouterJoueur(Habitant habitant)
-        {
-            listeDesHabitants.Add(habitant);
-            maitreDuJeu.chuchoter(habitant, Properties.Resources.SalutationHabitant);
-            if (listeDesHabitants.Count == nombreHabitantsAttendu)
-            {
-                peutCommencer = true;
-                maitreDuJeu.conter(Properties.Resources.VillageComplet);
-            }
-        }
-
         public void avecCommeMaitreDuJeu(MaitreDuJeu maitreDuJeu)
         {
             this.maitreDuJeu = maitreDuJeu;
         }
 
-        public void commencerPartie()
+        public void jouerPartie()
+        {
+            PartieEnCours = true;
+            attribuerRole();
+            maitreDuJeu.conter(Properties.Resources.PresentationDuJeu);
+
+
+        }
+
+        private void attribuerRole()
         {
             List<string> listeDesRoles = creerListeDesRoles();
 
@@ -147,11 +147,24 @@ namespace LoupGarou.Core
                 listeDesHabitants[i].Role = listeDesRoles[i];
                 listeDesHabitants[i].afficheInformation(Properties.Resources.AnnonceRoleDuJoueur + listeDesHabitants[i].Role);
             }
-            maitreDuJeu.conter(Properties.Resources.PresentationDuJeu);
         }
 
         static Random _random = new Random();
         public bool peutCommencer;
+
+
+        public bool PartieEnCours
+        {
+            get
+            {
+                return partieEnCours;
+            }
+
+            set
+            {
+                partieEnCours = value;
+            }
+        }
 
         private List<string> creerListeDesRoles()
         {
@@ -230,6 +243,57 @@ namespace LoupGarou.Core
         public void estUnePartieSimplifie()
         {
             partieSimplifie = true;
+        }
+
+        public void activerRole(string v)
+        {
+            remiseAZeroDesCompteurDeVote();
+            if (v == Properties.Resources.NomRoleVoyante)
+            {
+                maitreDuJeu.conter(Properties.Resources.DebutTourVoyante);
+            }
+            choisirCibleParLeRole(v);
+            acterLeChoix(quiEstElu());
+        }
+
+        private void remiseAZeroDesCompteurDeVote()
+        {
+            nombreDeJoueurAyantCible = 0;
+            joueurCible.Clear();
+            foreach (var h in listeDesHabitants)
+            {
+                joueurCible.Add(h.Nom, 0);
+            }
+        }
+
+        private void acterLeChoix( string joueurElu)
+        {
+            if (estAuTourDe == Properties.Resources.NomRoleVoyante)
+            {
+                Habitant habitant = listeDesHabitants.Single(h => h.Nom == joueurElu);
+                Habitant voyante = listeDesHabitants.Single(h => h.Role == Properties.Resources.NomRoleVoyante);
+                maitreDuJeu.chuchoter(voyante, habitant.Role);
+            }
+        }
+
+        private void choisirCibleParLeRole(string v)
+        {
+            foreach (var habitant in listeDesHabitants)
+            {
+                if(habitant.Role == v)
+                {
+                    string nomHabitant = habitant.cibleChoisie();
+                    habitantCible(nomHabitant);
+                }
+            }
+            }
+
+        public void desactiverRole(string v)
+        {
+            if (v == Properties.Resources.NomRoleVoyante)
+            {
+                maitreDuJeu.conter(Properties.Resources.FinTourVoyante);
+            }
         }
     }
 }

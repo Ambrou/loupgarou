@@ -11,18 +11,16 @@ namespace LoupGarou.Console
     {
         static void Main(string[] args)
         {
+            CreateurHabitant createurHabitant = new CreateurHabitantConsole();
             JeuDuLoupGarou jeuDuLoupGarou = new JeuDuLoupGarou();
             jeuDuLoupGarou.avecCommeMaitreDuJeu(new MaitreDuJeuConsole());
             jeuDuLoupGarou.estUnePartieSimplifie();
             jeuDuLoupGarou.creerUnVillageAvecHabitants(8);
+            jeuDuLoupGarou.attendreHabitants(createurHabitant);
 
-            for (int i = 0; i < 8; i++)
-            {
-                Habitant habitant = new HabitantConsole(System.Console.ReadLine(), jeuDuLoupGarou);
-                habitant.emmenage();
-            }
+            
 
-            jeuDuLoupGarou.commencerPartie();
+            jeuDuLoupGarou.jouerPartie();
         }
     }
 }
