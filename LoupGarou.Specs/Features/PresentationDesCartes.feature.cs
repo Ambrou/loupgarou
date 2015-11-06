@@ -68,38 +68,6 @@ namespace LoupGarou.Specs.Features
         {
             testRunner.CollectScenarioErrors();
         }
-        
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
- testRunner.Given("le jeu du loup garou", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 8
- testRunner.And("un maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Demande de la description d\'un role")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Presentation des cartes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Novice")]
-        public virtual void DemandeDeLaDescriptionDUnRole()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demande de la description d\'un role", new string[] {
-                        "Novice"});
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 12
- testRunner.Given("moi un habitant novice du village", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
-#line 13
- testRunner.When("je demande les informations d\'un rôle au maitre du jeu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
-#line 14
- testRunner.Then("le maitre du jeu me donne quand le rôle agit, son pouvoir et subtilité", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

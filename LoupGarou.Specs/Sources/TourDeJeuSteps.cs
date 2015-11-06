@@ -47,7 +47,7 @@ namespace LoupGarou.Specs.Sources
         public void SoitLeTourDesLoupsGarous()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.auTourDe("loup-garou");
+            jeuDuLoupGarou.estAuTourDe = "loup-garou";
 
         }
 
@@ -93,7 +93,7 @@ namespace LoupGarou.Specs.Sources
         public void SoitLeTourDesVillageois()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.auTourDe("villageois");
+            jeuDuLoupGarou.estAuTourDe = "villageois";
         }
 
         [When(@"les villageois ont choisi à la majorité leur coupable")]
@@ -161,7 +161,7 @@ namespace LoupGarou.Specs.Sources
         {
             listHabitant[2].Setup(h => h.cibleChoisie()).Returns("quatre");
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.activerRole(jeuDuLoupGarou.estAuTourDe);
+            jeuDuLoupGarou.activerRole();
         }
 
         [Then(@"le maitre du jeu informe la voyante du rôle de l'habitant dans le village qu'elle a choisit")]
@@ -239,7 +239,8 @@ namespace LoupGarou.Specs.Sources
             habitant.Object.Role = "voyante";
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.AjouterHabitant(habitant.Object);
-            jeuDuLoupGarou.activerRole("voyante");
+            jeuDuLoupGarou.estAuTourDe = "voyante";
+            jeuDuLoupGarou.activerRole();
         }
 
         [Then(@"je reveille les joueurs correspondant au rôle")]
@@ -259,7 +260,8 @@ namespace LoupGarou.Specs.Sources
         public void QuandTousLesJoueursDuRoleEnCoursOntDesigneUnAutreJoueur()
         {
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.activerRole("voyante");
+            jeuDuLoupGarou.estAuTourDe = "voyante";
+            jeuDuLoupGarou.activerRole();
         }
 
         [Then(@"je rendors les joueurs correspondant au rôle")]
@@ -267,13 +269,6 @@ namespace LoupGarou.Specs.Sources
         {
             var maitreDuJeuMock = ScenarioContext.Current.Get<Mock<MaitreDuJeu>>();
             maitreDuJeuMock.Verify(mj => mj.conter(It.IsAny<string>()));
-        }
-
-        [Then(@"j'active le rôle suivant")]
-        public void AlorsJActiveLeRoleSuivant()
-        {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            Assert.AreNotEqual("voyante", jeuDuLoupGarou.estAuTourDe);
         }
 
         [Then(@"le jeu est fini")]

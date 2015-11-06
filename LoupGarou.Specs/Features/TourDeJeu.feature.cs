@@ -121,8 +121,6 @@ this.FeatureBackground();
  testRunner.When("tous les joueurs du rôle en cours ont désigné un autre joueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Lorsque ");
 #line 87
  testRunner.Then("je rendors les joueurs correspondant au rôle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
-#line 88
- testRunner.And("j\'active le rôle suivant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -85,4 +85,3 @@ Scénario: Description de la fin de phase d'un rôle
     Soit une partie en cours
 	Lorsque tous les joueurs du rôle en cours ont désigné un autre joueur
 	Alors je rendors les joueurs correspondant au rôle
-	Et j'active le rôle suivant
