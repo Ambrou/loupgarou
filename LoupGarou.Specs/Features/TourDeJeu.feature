@@ -37,18 +37,17 @@ Contexte:
 #	Et c'est le tour de la voyante
 #	Et le joueur mort ne fait plus parti des habitants
 #
-@Jeu @MaitreDuJeu @Voyante
-Scénario: La voyante utilise son pouvoir de divination
-	Soit le tour de la voyante
-	Et il reste comme joueurs:
-	| habitant | role       |
-	| quatre   | loup-garou |
-	| cinq     | villageois |
-	| six      | voyante    |
-	Quand la voyante utilise son pouvoir sur un habitant 
-	Alors le maitre du jeu l'informe du rôle de l'habitant dans le village
-	#Et il rendort la voyante
-	#Et c'est le tour des loups garous
+#@Jeu @MaitreDuJeu @Voyante
+#Scénario: La voyante utilise son pouvoir de divination / Activation du role de la voyante
+#	Soit il reste comme joueurs:
+#	| habitant | role       |
+#	| quatre   | loup-garou |
+#	| cinq     | villageois |
+#	| six      | voyante    |
+#	Et la voyante désigne un habitant
+#	Et c'est le tour de la voyante
+#	Quand le maitre du jeu active le tour
+#	Alors le maitre du jeu informe la voyante du rôle de l'habitant dans le village qu'elle a choisit
 #	
 #@Jeu @MaitreDuJeu @Victoire
 #Scénario: Victoire des villageois
@@ -58,21 +57,21 @@ Scénario: La voyante utilise son pouvoir de divination
 #	Et le joueur mort ne fait plus parti des habitants
 #	Et les villageois ont gagné
 #		
-@Jeu @MaitreDuJeu @Victoire
-Scénario: Victoire des loups garous
-	Soit une partie en cours
-	Et le tour des loups garous
-	Et il reste comme joueurs:
-	| habitant | role       |
-	| quatre   | loup-garou |
-	| cinq     | villageois |
-	| six      | loup-garou |
-	Quand les loups garous ont choisit le dernier villageois
-	Alors le maitre du jeu rendort les loups garous
-	Et le maitre du jeu réveille le village
-	Et il annonce le joueur mort ainsi que son rôle
-	Et les loup garous ont gagné
-	Et le jeu est fini
+#@Jeu @MaitreDuJeu @Victoire
+#Scénario: Victoire des loups garous
+#	Soit une partie en cours
+#	Et il reste comme joueurs:
+#	| habitant | role       |
+#	| quatre   | loup-garou |
+#	| cinq     | villageois |
+#	| six      | loup-garou |
+#	Et le tour des loups garous
+#	Quand les loups garous ont choisit le dernier villageois
+#	Alors le maitre du jeu rendort les loups garous
+#	Et le maitre du jeu réveille le village
+#	Et il annonce le joueur mort ainsi que son rôle
+#	Et les loup garous ont gagné
+#	Et le jeu est fini
 
 @Jeu
 Scénario: Description du début de phase d'un rôle

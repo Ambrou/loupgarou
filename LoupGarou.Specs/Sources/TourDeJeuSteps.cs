@@ -149,26 +149,27 @@ namespace LoupGarou.Specs.Sources
             }
         }
 
-        [Given(@"le tour de la voyante")]
-        public void SoitLeTourDeLaVoyante()
-        {
-            var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
-            jeuDuLoupGarou.auTourDe("voyante");
-        }
+        //[Given(@"le tour de la voyante")]
+        //public void SoitLeTourDeLaVoyante()
+        //{
+        //    var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
+        //    jeuDuLoupGarou.auTourDe("voyante");
+        //}
 
-        [When(@"la voyante utilise son pouvoir sur un habitant")]
-        public void QuandLaVoyanteUtiliseSonPouvoirSurUnHabitant()
+        [When(@"pendant son tour la voyante utilise son pouvoir sur un habitant")]
+        public void QuandPendantSonTourLaVoyanteUtiliseSonPouvoirSurUnHabitant()
         {
             listHabitant[2].Setup(h => h.cibleChoisie()).Returns("quatre");
             var jeuDuLoupGarou = ScenarioContext.Current.Get<JeuDuLoupGarou>();
             jeuDuLoupGarou.activerRole(jeuDuLoupGarou.estAuTourDe);
         }
 
-        [Then(@"le maitre du jeu l'informe du rôle de l'habitant dans le village")]
-        public void AlorsLeMaitreDuJeuLInformeDuroleDeLHabitantDansLeVillage()
+        [Then(@"le maitre du jeu informe la voyante du rôle de l'habitant dans le village qu'elle a choisit")]
+        public void AlorsLeMaitreDuJeuInformeLaVoyanteDuRoleDeLElleAChoisit()
         {
-            listHabitant[2].Verify(h => h.afficheInformation("loup-garou"));
+            listHabitant[2].Verify(h => h.afficheInformation(It.IsAny<string>()));
         }
+        
 
         //[Then(@"il rendort la voyante")]
         //public void AlorsIlRendortLaVoyante()

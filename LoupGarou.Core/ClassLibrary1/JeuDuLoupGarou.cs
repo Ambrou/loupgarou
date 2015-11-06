@@ -134,11 +134,22 @@ namespace LoupGarou.Core
             PartieEnCours = true;
             attribuerRole();
             maitreDuJeu.conter(Properties.Resources.PresentationDuJeu);
+            //roleSuivant();
+            while (PartieEnCours == true)
+            {
+                remiseAZeroDesCompteurDeVote();
+                activerRole("voyante");
+                choisirCibleParLeRole("voyante");
+                acterLeChoix(quiEstElu());
+                desactiverRole("voyante");
+                //roleSuivant();
+            }
 
 
         }
+        
 
-        private void attribuerRole()
+        protected void attribuerRole()
         {
             List<string> listeDesRoles = creerListeDesRoles();
 
@@ -247,13 +258,10 @@ namespace LoupGarou.Core
 
         public void activerRole(string v)
         {
-            remiseAZeroDesCompteurDeVote();
             if (v == Properties.Resources.NomRoleVoyante)
             {
                 maitreDuJeu.conter(Properties.Resources.DebutTourVoyante);
             }
-            choisirCibleParLeRole(v);
-            acterLeChoix(quiEstElu());
         }
 
         private void remiseAZeroDesCompteurDeVote()
